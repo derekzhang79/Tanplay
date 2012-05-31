@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7132F15775F33004283F7 /* UIKit.framework */; };
+		A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133115775F33004283F7 /* Foundation.framework */; };
+		A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133315775F33004283F7 /* CoreGraphics.framework */; };
+		A9F7133A15775F33004283F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9F7133815775F33004283F7 /* InfoPlist.strings */; };
+		A9F7133C15775F33004283F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7133B15775F33004283F7 /* main.m */; };
+		A9F7134015775F33004283F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7133F15775F33004283F7 /* AppDelegate.m */; };
+		A9F7134315775F33004283F7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7134215775F33004283F7 /* FirstViewController.m */; };
+		A9F7134515775F34004283F7 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134415775F34004283F7 /* first.png */; };
+		A9F7134715775F34004283F7 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134615775F34004283F7 /* first@2x.png */; };
+		A9F7134A15775F34004283F7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7134915775F34004283F7 /* SecondViewController.m */; };
+		A9F7134C15775F34004283F7 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134B15775F34004283F7 /* second.png */; };
+		A9F7134E15775F34004283F7 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134D15775F34004283F7 /* second@2x.png */; };
+		A9F7135115775F34004283F7 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134F15775F34004283F7 /* FirstViewController.xib */; };
+		A9F7135415775F34004283F7 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7135215775F34004283F7 /* SecondViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9F7132B15775F33004283F7 /* Tanplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F7132F15775F33004283F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A9F7133115775F33004283F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A9F7133315775F33004283F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A9F7133715775F33004283F7 /* Tanplay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tanplay-Info.plist"; sourceTree = "<group>"; };
+		A9F7133915775F33004283F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9F7133B15775F33004283F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9F7133D15775F33004283F7 /* Tanplay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tanplay-Prefix.pch"; sourceTree = "<group>"; };
+		A9F7133E15775F33004283F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9F7133F15775F33004283F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9F7134115775F33004283F7 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		A9F7134215775F33004283F7 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A9F7134415775F34004283F7 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		A9F7134615775F34004283F7 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		A9F7134815775F34004283F7 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		A9F7134915775F34004283F7 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A9F7134B15775F34004283F7 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		A9F7134D15775F34004283F7 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		A9F7135015775F34004283F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
+		A9F7135315775F34004283F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9F7132815775F33004283F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */,
+				A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */,
+				A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9F7132015775F33004283F7 = {
+			isa = PBXGroup;
+			children = (
+				A9F7133515775F33004283F7 /* Tanplay */,
+				A9F7132E15775F33004283F7 /* Frameworks */,
+				A9F7132C15775F33004283F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9F7132C15775F33004283F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7132B15775F33004283F7 /* Tanplay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9F7132E15775F33004283F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7132F15775F33004283F7 /* UIKit.framework */,
+				A9F7133115775F33004283F7 /* Foundation.framework */,
+				A9F7133315775F33004283F7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9F7133515775F33004283F7 /* Tanplay */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7133E15775F33004283F7 /* AppDelegate.h */,
+				A9F7133F15775F33004283F7 /* AppDelegate.m */,
+				A9F7134115775F33004283F7 /* FirstViewController.h */,
+				A9F7134215775F33004283F7 /* FirstViewController.m */,
+				A9F7134415775F34004283F7 /* first.png */,
+				A9F7134615775F34004283F7 /* first@2x.png */,
+				A9F7134815775F34004283F7 /* SecondViewController.h */,
+				A9F7134915775F34004283F7 /* SecondViewController.m */,
+				A9F7134B15775F34004283F7 /* second.png */,
+				A9F7134D15775F34004283F7 /* second@2x.png */,
+				A9F7134F15775F34004283F7 /* FirstViewController.xib */,
+				A9F7135215775F34004283F7 /* SecondViewController.xib */,
+				A9F7133615775F33004283F7 /* Supporting Files */,
+			);
+			path = Tanplay;
+			sourceTree = "<group>";
+		};
+		A9F7133615775F33004283F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7133715775F33004283F7 /* Tanplay-Info.plist */,
+				A9F7133815775F33004283F7 /* InfoPlist.strings */,
+				A9F7133B15775F33004283F7 /* main.m */,
+				A9F7133D15775F33004283F7 /* Tanplay-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9F7132A15775F33004283F7 /* Tanplay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9F7135715775F34004283F7 /* Build configuration list for PBXNativeTarget "Tanplay" */;
+			buildPhases = (
+				A9F7132715775F33004283F7 /* Sources */,
+				A9F7132815775F33004283F7 /* Frameworks */,
+				A9F7132915775F33004283F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tanplay;
+			productName = Tanplay;
+			productReference = A9F7132B15775F33004283F7 /* Tanplay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9F7132215775F33004283F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = A9F7132515775F33004283F7 /* Build configuration list for PBXProject "Tanplay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A9F7132015775F33004283F7;
+			productRefGroup = A9F7132C15775F33004283F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9F7132A15775F33004283F7 /* Tanplay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9F7132915775F33004283F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9F7133A15775F33004283F7 /* InfoPlist.strings in Resources */,
+				A9F7134515775F34004283F7 /* first.png in Resources */,
+				A9F7134715775F34004283F7 /* first@2x.png in Resources */,
+				A9F7134C15775F34004283F7 /* second.png in Resources */,
+				A9F7134E15775F34004283F7 /* second@2x.png in Resources */,
+				A9F7135115775F34004283F7 /* FirstViewController.xib in Resources */,
+				A9F7135415775F34004283F7 /* SecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9F7132715775F33004283F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9F7133C15775F33004283F7 /* main.m in Sources */,
+				A9F7134015775F33004283F7 /* AppDelegate.m in Sources */,
+				A9F7134315775F33004283F7 /* FirstViewController.m in Sources */,
+				A9F7134A15775F34004283F7 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A9F7133815775F33004283F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9F7133915775F33004283F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A9F7134F15775F34004283F7 /* FirstViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9F7135015775F34004283F7 /* en */,
+			);
+			name = FirstViewController.xib;
+			sourceTree = "<group>";
+		};
+		A9F7135215775F34004283F7 /* SecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9F7135315775F34004283F7 /* en */,
+			);
+			name = SecondViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9F7135515775F34004283F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A9F7135615775F34004283F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9F7135815775F34004283F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tanplay/Tanplay-Prefix.pch";
+				INFOPLIST_FILE = "Tanplay/Tanplay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A9F7135915775F34004283F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tanplay/Tanplay-Prefix.pch";
+				INFOPLIST_FILE = "Tanplay/Tanplay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9F7132515775F33004283F7 /* Build configuration list for PBXProject "Tanplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9F7135515775F34004283F7 /* Debug */,
+				A9F7135615775F34004283F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9F7135715775F34004283F7 /* Build configuration list for PBXNativeTarget "Tanplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9F7135815775F34004283F7 /* Debug */,
+				A9F7135915775F34004283F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9F7132215775F33004283F7 /* Project object */;
+}
