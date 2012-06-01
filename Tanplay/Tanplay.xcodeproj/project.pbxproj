@@ -29,20 +29,22 @@
 		6C519D7815790E0F00088700 /* VolumeWhiteMusicCap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D6215790E0F00088700 /* VolumeWhiteMusicCap@2x.png */; };
 		6C519D7915790E0F00088700 /* VolumeWhiteMusicFill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D6315790E0F00088700 /* VolumeWhiteMusicFill@2x.png */; };
 		6C519D7A15790E0F00088700 /* VolumeWhiteTrack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D6415790E0F00088700 /* VolumeWhiteTrack@2x.png */; };
+		6C519D7D157910A000088700 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D7B157910A000088700 /* Icon.png */; };
+		6C519D7E157910A000088700 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D7C157910A000088700 /* Icon@2x.png */; };
+		6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D851579145A00088700 /* TPLocalMusicViewController.m */; };
+		6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D861579145A00088700 /* TPLocalMusicViewController.xib */; };
+		6C519D8C157914B000088700 /* TPEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D8A157914B000088700 /* TPEmptyViewController.m */; };
+		6C519D8D157914B000088700 /* TPEmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D8B157914B000088700 /* TPEmptyViewController.xib */; };
 		A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7132F15775F33004283F7 /* UIKit.framework */; };
 		A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133115775F33004283F7 /* Foundation.framework */; };
 		A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133315775F33004283F7 /* CoreGraphics.framework */; };
 		A9F7133A15775F33004283F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9F7133815775F33004283F7 /* InfoPlist.strings */; };
 		A9F7133C15775F33004283F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7133B15775F33004283F7 /* main.m */; };
 		A9F7134015775F33004283F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7133F15775F33004283F7 /* AppDelegate.m */; };
-		A9F7134315775F33004283F7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7134215775F33004283F7 /* FirstViewController.m */; };
 		A9F7134515775F34004283F7 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134415775F34004283F7 /* first.png */; };
 		A9F7134715775F34004283F7 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134615775F34004283F7 /* first@2x.png */; };
-		A9F7134A15775F34004283F7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7134915775F34004283F7 /* SecondViewController.m */; };
 		A9F7134C15775F34004283F7 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134B15775F34004283F7 /* second.png */; };
 		A9F7134E15775F34004283F7 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134D15775F34004283F7 /* second@2x.png */; };
-		A9F7135115775F34004283F7 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134F15775F34004283F7 /* FirstViewController.xib */; };
-		A9F7135415775F34004283F7 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7135215775F34004283F7 /* SecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,14 @@
 		6C519D6215790E0F00088700 /* VolumeWhiteMusicCap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VolumeWhiteMusicCap@2x.png"; path = "Resources/VolumeWhiteMusicCap@2x.png"; sourceTree = "<group>"; };
 		6C519D6315790E0F00088700 /* VolumeWhiteMusicFill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VolumeWhiteMusicFill@2x.png"; path = "Resources/VolumeWhiteMusicFill@2x.png"; sourceTree = "<group>"; };
 		6C519D6415790E0F00088700 /* VolumeWhiteTrack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VolumeWhiteTrack@2x.png"; path = "Resources/VolumeWhiteTrack@2x.png"; sourceTree = "<group>"; };
+		6C519D7B157910A000088700 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		6C519D7C157910A000088700 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
+		6C519D841579145A00088700 /* TPLocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPLocalMusicViewController.h; path = Controllers/TPLocalMusicViewController.h; sourceTree = "<group>"; };
+		6C519D851579145A00088700 /* TPLocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPLocalMusicViewController.m; path = Controllers/TPLocalMusicViewController.m; sourceTree = "<group>"; };
+		6C519D861579145A00088700 /* TPLocalMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPLocalMusicViewController.xib; path = Controllers/TPLocalMusicViewController.xib; sourceTree = "<group>"; };
+		6C519D89157914B000088700 /* TPEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPEmptyViewController.h; path = Controllers/TPEmptyViewController.h; sourceTree = "<group>"; };
+		6C519D8A157914B000088700 /* TPEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPEmptyViewController.m; path = Controllers/TPEmptyViewController.m; sourceTree = "<group>"; };
+		6C519D8B157914B000088700 /* TPEmptyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPEmptyViewController.xib; path = Controllers/TPEmptyViewController.xib; sourceTree = "<group>"; };
 		A9F7132B15775F33004283F7 /* Tanplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F7132F15775F33004283F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9F7133115775F33004283F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,16 +88,10 @@
 		A9F7133D15775F33004283F7 /* Tanplay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tanplay-Prefix.pch"; sourceTree = "<group>"; };
 		A9F7133E15775F33004283F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9F7133F15775F33004283F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9F7134115775F33004283F7 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		A9F7134215775F33004283F7 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		A9F7134415775F34004283F7 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		A9F7134615775F34004283F7 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		A9F7134815775F34004283F7 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A9F7134915775F34004283F7 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		A9F7134B15775F34004283F7 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		A9F7134D15775F34004283F7 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		A9F7135015775F34004283F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		A9F7135315775F34004283F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		6C519D4D15790DEC00088700 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				6C519D7B157910A000088700 /* Icon.png */,
+				6C519D7C157910A000088700 /* Icon@2x.png */,
 				6C519D4F15790E0F00088700 /* nexttrack@2x.png */,
 				6C519D5015790E0F00088700 /* noartplaceholder@2x.png */,
 				6C519D5115790E0F00088700 /* pause@2x.png */,
@@ -131,6 +137,19 @@
 				6C519D6415790E0F00088700 /* VolumeWhiteTrack@2x.png */,
 			);
 			name = Resouces;
+			sourceTree = "<group>";
+		};
+		6C519D831579138E00088700 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6C519D841579145A00088700 /* TPLocalMusicViewController.h */,
+				6C519D851579145A00088700 /* TPLocalMusicViewController.m */,
+				6C519D861579145A00088700 /* TPLocalMusicViewController.xib */,
+				6C519D89157914B000088700 /* TPEmptyViewController.h */,
+				6C519D8A157914B000088700 /* TPEmptyViewController.m */,
+				6C519D8B157914B000088700 /* TPEmptyViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		A9F7132015775F33004283F7 = {
@@ -163,18 +182,13 @@
 		A9F7133515775F33004283F7 /* Tanplay */ = {
 			isa = PBXGroup;
 			children = (
+				6C519D831579138E00088700 /* Controllers */,
 				A9F7133E15775F33004283F7 /* AppDelegate.h */,
 				A9F7133F15775F33004283F7 /* AppDelegate.m */,
-				A9F7134115775F33004283F7 /* FirstViewController.h */,
-				A9F7134215775F33004283F7 /* FirstViewController.m */,
 				A9F7134415775F34004283F7 /* first.png */,
 				A9F7134615775F34004283F7 /* first@2x.png */,
-				A9F7134815775F34004283F7 /* SecondViewController.h */,
-				A9F7134915775F34004283F7 /* SecondViewController.m */,
 				A9F7134B15775F34004283F7 /* second.png */,
 				A9F7134D15775F34004283F7 /* second@2x.png */,
-				A9F7134F15775F34004283F7 /* FirstViewController.xib */,
-				A9F7135215775F34004283F7 /* SecondViewController.xib */,
 				A9F7133615775F33004283F7 /* Supporting Files */,
 				6C519D4D15790DEC00088700 /* Resouces */,
 			);
@@ -247,8 +261,6 @@
 				A9F7134715775F34004283F7 /* first@2x.png in Resources */,
 				A9F7134C15775F34004283F7 /* second.png in Resources */,
 				A9F7134E15775F34004283F7 /* second@2x.png in Resources */,
-				A9F7135115775F34004283F7 /* FirstViewController.xib in Resources */,
-				A9F7135415775F34004283F7 /* SecondViewController.xib in Resources */,
 				6C519D6515790E0F00088700 /* nexttrack@2x.png in Resources */,
 				6C519D6615790E0F00088700 /* noartplaceholder@2x.png in Resources */,
 				6C519D6715790E0F00088700 /* pause@2x.png in Resources */,
@@ -271,6 +283,10 @@
 				6C519D7815790E0F00088700 /* VolumeWhiteMusicCap@2x.png in Resources */,
 				6C519D7915790E0F00088700 /* VolumeWhiteMusicFill@2x.png in Resources */,
 				6C519D7A15790E0F00088700 /* VolumeWhiteTrack@2x.png in Resources */,
+				6C519D7D157910A000088700 /* Icon.png in Resources */,
+				6C519D7E157910A000088700 /* Icon@2x.png in Resources */,
+				6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */,
+				6C519D8D157914B000088700 /* TPEmptyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +299,8 @@
 			files = (
 				A9F7133C15775F33004283F7 /* main.m in Sources */,
 				A9F7134015775F33004283F7 /* AppDelegate.m in Sources */,
-				A9F7134315775F33004283F7 /* FirstViewController.m in Sources */,
-				A9F7134A15775F34004283F7 /* SecondViewController.m in Sources */,
+				6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */,
+				6C519D8C157914B000088700 /* TPEmptyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,22 +313,6 @@
 				A9F7133915775F33004283F7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A9F7134F15775F34004283F7 /* FirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9F7135015775F34004283F7 /* en */,
-			);
-			name = FirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		A9F7135215775F34004283F7 /* SecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9F7135315775F34004283F7 /* en */,
-			);
-			name = SecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

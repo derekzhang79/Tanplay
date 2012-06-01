@@ -7,10 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
+#import "TPLocalMusicViewController.h"
+#import "TPEmptyViewController.h"
 
 @implementation AppDelegate
 
@@ -28,10 +26,13 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil] autorelease];
-    UIViewController *viewController2 = [[[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil] autorelease];
+    UIViewController *viewController1 = [[[TPLocalMusicViewController alloc] initWithNibName:@"TPLocalMusicViewController" bundle:nil] autorelease];
+    UIViewController *viewController2 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
+    UIViewController *viewController3 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
+    UIViewController *viewController4 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, viewController4, nil];
+
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
