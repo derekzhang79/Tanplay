@@ -15,6 +15,10 @@
 #define DEFAULT_PIXELS_PER_SECOND 30
 #define DEFAULT_PAUSE_TIME 2.0f
 
+@interface AutoScrollLabel()
+- (void)showLeftShadow:(NSNumber*)show;
+@end
+
 @implementation AutoScrollLabel
 @synthesize pauseInterval;
 @synthesize bufferSpaceBetweenLabels;

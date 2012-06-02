@@ -33,7 +33,7 @@
 		6C519D7E157910A000088700 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D7C157910A000088700 /* Icon@2x.png */; };
 		6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D851579145A00088700 /* TPLocalMusicViewController.m */; };
 		6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D861579145A00088700 /* TPLocalMusicViewController.xib */; };
-		A96018761579F70800ED697F /* TPIpodExampleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018701579F70800ED697F /* TPIpodExampleProvider.m */; };
+		6CCD4B1C157A6074001D7C72 /* TPiPodProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */; };
 		A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018741579F70800ED697F /* TPMusicPlayerViewController.m */; };
 		A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */; };
 		A96018811579F8E000ED697F /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A960187A1579F8E000ED697F /* AutoScrollLabel.m */; };
@@ -86,8 +86,8 @@
 		6C519D841579145A00088700 /* TPLocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPLocalMusicViewController.h; path = Controllers/TPLocalMusicViewController.h; sourceTree = "<group>"; };
 		6C519D851579145A00088700 /* TPLocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPLocalMusicViewController.m; path = Controllers/TPLocalMusicViewController.m; sourceTree = "<group>"; };
 		6C519D861579145A00088700 /* TPLocalMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPLocalMusicViewController.xib; path = Controllers/TPLocalMusicViewController.xib; sourceTree = "<group>"; };
-		A960186F1579F70800ED697F /* TPIpodExampleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPIpodExampleProvider.h; path = MusicPlayer/TPIpodExampleProvider.h; sourceTree = "<group>"; };
-		A96018701579F70800ED697F /* TPIpodExampleProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPIpodExampleProvider.m; path = MusicPlayer/TPIpodExampleProvider.m; sourceTree = "<group>"; };
+		6CCD4B1A157A6073001D7C72 /* TPiPodProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPiPodProvider.h; path = MusicPlayer/TPiPodProvider.h; sourceTree = "<group>"; };
+		6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPiPodProvider.m; path = MusicPlayer/TPiPodProvider.m; sourceTree = "<group>"; };
 		A96018711579F70800ED697F /* TPMusicPlayerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDataSource.h; path = MusicPlayer/TPMusicPlayerDataSource.h; sourceTree = "<group>"; };
 		A96018721579F70800ED697F /* TPMusicPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDelegate.h; path = MusicPlayer/TPMusicPlayerDelegate.h; sourceTree = "<group>"; };
 		A96018731579F70800ED697F /* TPMusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerViewController.h; path = MusicPlayer/TPMusicPlayerViewController.h; sourceTree = "<group>"; };
@@ -189,6 +189,8 @@
 		A960186D1579F6F900ED697F /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				6CCD4B1A157A6073001D7C72 /* TPiPodProvider.h */,
+				6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */,
 				A96018791579F8E000ED697F /* AutoScrollLabel.h */,
 				A960187A1579F8E000ED697F /* AutoScrollLabel.m */,
 				A960187B1579F8E000ED697F /* NSDateFormatter+Duration.h */,
@@ -197,8 +199,6 @@
 				A960187E1579F8E000ED697F /* OBSlider.m */,
 				A960187F1579F8E000ED697F /* UIImageView+Reflection.h */,
 				A96018801579F8E000ED697F /* UIImageView+Reflection.m */,
-				A960186F1579F70800ED697F /* TPIpodExampleProvider.h */,
-				A96018701579F70800ED697F /* TPIpodExampleProvider.m */,
 				A96018711579F70800ED697F /* TPMusicPlayerDataSource.h */,
 				A96018721579F70800ED697F /* TPMusicPlayerDelegate.h */,
 				A96018731579F70800ED697F /* TPMusicPlayerViewController.h */,
@@ -363,12 +363,12 @@
 				A9F7134015775F33004283F7 /* AppDelegate.m in Sources */,
 				6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */,
 				A9F713761579EE7A004283F7 /* TPEmptyViewController.m in Sources */,
-				A96018761579F70800ED697F /* TPIpodExampleProvider.m in Sources */,
 				A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */,
 				A96018811579F8E000ED697F /* AutoScrollLabel.m in Sources */,
 				A96018821579F8E000ED697F /* NSDateFormatter+Duration.m in Sources */,
 				A96018831579F8E000ED697F /* OBSlider.m in Sources */,
 				A96018841579F8E000ED697F /* UIImageView+Reflection.m in Sources */,
+				6CCD4B1C157A6074001D7C72 /* TPiPodProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

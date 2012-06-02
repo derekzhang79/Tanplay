@@ -49,4 +49,5 @@ enum AutoScrollDirection {
 - (void) setShadowOffset:(CGSize)offset;
 - (void) setShadowColor:(UIColor *)color;
 
+
 @end

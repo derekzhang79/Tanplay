@@ -15,6 +15,13 @@
 
 @interface TPMusicPlayerViewController()
 
+-(void)setScrobbleUI:(BOOL)scrobbleState;
+-(void)adjustPlayButtonState;
+-(void)changeTrack:(NSUInteger)newTrack;
+-(void)updateSeekUI;
+-(void)updateTrackDisplay;
+-(void)adjustDirectionalButtonStates;
+
 @property (nonatomic, retain) IBOutlet UISlider* volumeSlider; // Volume Slider
 @property (nonatomic, retain) IBOutlet UISlider* progressSlider; // Progress Slider buried in the Progress View
 
@@ -35,9 +42,9 @@
 @property (nonatomic, retain) IBOutlet UIImageView* albumArtImageView; // Album Art Image View
 @property (nonatomic, retain) IBOutlet UIImageView* albumArtReflection; // It's reflection
 
-@property (nonatomic,strong) NSTimer* playbackTickTimer; // Ticks each seconds when playing.
+@property (nonatomic, retain) NSTimer* playbackTickTimer; // Ticks each seconds when playing.
 
-@property (nonatomic,strong) UITapGestureRecognizer* coverArtGestureRecognizer; // Tap Recognizer used to dim in / out the scrobble overlay.
+@property (nonatomic, retain) UITapGestureRecognizer* coverArtGestureRecognizer; // Tap Recognizer used to dim in / out the scrobble overlay.
 
 @property (nonatomic, retain) IBOutlet UIView* scrobbleOverlay; // Overlay that serves as a container for all components visible only in scrobble-mode
 @property (nonatomic, retain) IBOutlet UILabel* timeElapsedLabel; // Elapsed Time Label

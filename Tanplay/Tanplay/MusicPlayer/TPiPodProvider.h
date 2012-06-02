@@ -1,5 +1,5 @@
 //
-//  TPIpodExampleProvider.h
+//  TPiPodProvider.h
 //  Tanplay
 //
 //  Created by ding jie on 5/31/12.
@@ -10,7 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "TPMusicPlayerViewController.h"
 
-@interface TPiPodExampleProvider : NSObject<TPMusicPlayerDelegate, TPMusicPlayerDataSource>
+@interface TPiPodProvider : NSObject<TPMusicPlayerDelegate, TPMusicPlayerDataSource>
 {
     
 }

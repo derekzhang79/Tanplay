@@ -9,7 +9,7 @@
 #import "TPLocalMusicViewController.h"
 #import "TPEmptyViewController.h"
 #import "TPMusicPlayerViewController.h"
-#import "TPIpodExampleProvider.h"
+#import "TPiPodProvider.h"
 
 @implementation TPLocalMusicViewController
 
@@ -159,7 +159,7 @@
 #pragma mark - test play
 - (void)testPlay:(TPMusicPlayerViewController *)contoller
 {
-    TPiPodExampleProvider *exampleProvider = [TPiPodExampleProvider new];
+    TPiPodProvider *exampleProvider = [[TPiPodProvider alloc] init];
     exampleProvider.controller = contoller;
     
     contoller.dataSource = exampleProvider;

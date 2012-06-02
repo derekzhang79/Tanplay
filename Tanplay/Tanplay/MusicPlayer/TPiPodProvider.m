@@ -1,15 +1,15 @@
 //
-//  TPIpodExampleProvider.m
+//  TPiPodProvider.m
 //  Tanplay
 //
 //  Created by ding jie on 5/31/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "TPiPodExampleProvider.h"
+#import "TPiPodProvider.h"
 
 
-@implementation TPiPodExampleProvider
+@implementation TPiPodProvider
 
 @synthesize musicPlayer;
 @synthesize controller;
