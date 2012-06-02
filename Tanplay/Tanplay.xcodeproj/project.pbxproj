@@ -42,6 +42,8 @@
 		A96018841579F8E000ED697F /* UIImageView+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018801579F8E000ED697F /* UIImageView+Reflection.m */; };
 		A96018861579F99300ED697F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96018851579F99300ED697F /* MediaPlayer.framework */; };
 		A96018881579FAD800ED697F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96018871579FAD800ED697F /* QuartzCore.framework */; };
+		A960188B157A4AEE00ED697F /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9601889157A4AED00ED697F /* backbutton@2x.png */; };
+		A960188C157A4AEE00ED697F /* fade_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A960188A157A4AED00ED697F /* fade_overlay@2x.png */; };
 		A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7132F15775F33004283F7 /* UIKit.framework */; };
 		A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133115775F33004283F7 /* Foundation.framework */; };
 		A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133315775F33004283F7 /* CoreGraphics.framework */; };
@@ -101,6 +103,8 @@
 		A96018801579F8E000ED697F /* UIImageView+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Reflection.m"; path = "MusicPlayer/UIImageView+Reflection.m"; sourceTree = "<group>"; };
 		A96018851579F99300ED697F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A96018871579FAD800ED697F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A9601889157A4AED00ED697F /* backbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backbutton@2x.png"; path = "Resources/backbutton@2x.png"; sourceTree = "<group>"; };
+		A960188A157A4AED00ED697F /* fade_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fade_overlay@2x.png"; path = "Resources/fade_overlay@2x.png"; sourceTree = "<group>"; };
 		A9F7132B15775F33004283F7 /* Tanplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F7132F15775F33004283F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9F7133115775F33004283F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +143,8 @@
 		6C519D4D15790DEC00088700 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				A9601889157A4AED00ED697F /* backbutton@2x.png */,
+				A960188A157A4AED00ED697F /* fade_overlay@2x.png */,
 				6C519D7B157910A000088700 /* Icon.png */,
 				6C519D7C157910A000088700 /* Icon@2x.png */,
 				6C519D4F15790E0F00088700 /* nexttrack@2x.png */,
@@ -341,6 +347,8 @@
 				6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */,
 				A9F713771579EE7A004283F7 /* TPEmptyViewController.xib in Resources */,
 				A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */,
+				A960188B157A4AEE00ED697F /* backbutton@2x.png in Resources */,
+				A960188C157A4AEE00ED697F /* fade_overlay@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

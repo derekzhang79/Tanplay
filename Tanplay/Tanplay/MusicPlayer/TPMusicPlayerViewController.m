@@ -24,6 +24,7 @@
 
 @property (nonatomic, retain) IBOutlet UIToolbar* controlsToolbar; // Encapsulates the Play, Forward, Rewind buttons
 
+@property (nonatomic, retain) IBOutlet UINavigationBar *navgationBar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *actionButton; // retain, since controller keeps a reference while it might be detached from view hierarchy
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton; // retain, since controller keeps a reference while it might be detached from view hierarchy
 
@@ -101,6 +102,7 @@
 @synthesize shouldHidePreviousTrackButtonAtBoundary;
 @synthesize navigationItem;
 @synthesize preferredSizeForCoverArt;
+@synthesize navgationBar;
 
 - (void)viewDidLoad
 {
@@ -143,6 +145,7 @@
 
     self.trackTitleLabel.textColor = [UIColor whiteColor];
     [self.trackTitleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+    self.navgationBar.hidden = YES;
 }
 
 - (void)viewDidUnload

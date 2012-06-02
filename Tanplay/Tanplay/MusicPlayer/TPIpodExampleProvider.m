@@ -106,9 +106,10 @@
     
 }
 
--(void)musicPlayerBackRequested:(TPMusicPlayerViewController *)musicPlayer {
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Action" message:@"The Player's back button was pressed." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    [alertView show];
+-(void)musicPlayerBackRequested:(TPMusicPlayerViewController *)mp {
+//    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Action" message:@"The Player's back button was pressed." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+//    [alertView show];
+    [mp.navigationController popViewControllerAnimated:YES];
     
 }
 
