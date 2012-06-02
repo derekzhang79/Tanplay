@@ -27,11 +27,13 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[[TPLocalMusicViewController alloc] initWithNibName:@"TPLocalMusicViewController" bundle:nil] autorelease];
+    UINavigationController *musicNavController = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    musicNavController.navigationBar.barStyle = UIBarStyleBlack;
     UIViewController *viewController2 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
     UIViewController *viewController3 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
     UIViewController *viewController4 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, viewController4, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:musicNavController, viewController2, viewController3, viewController4, nil];
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

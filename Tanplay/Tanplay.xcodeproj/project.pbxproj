@@ -33,8 +33,15 @@
 		6C519D7E157910A000088700 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D7C157910A000088700 /* Icon@2x.png */; };
 		6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D851579145A00088700 /* TPLocalMusicViewController.m */; };
 		6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D861579145A00088700 /* TPLocalMusicViewController.xib */; };
-		6C519D8C157914B000088700 /* TPEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D8A157914B000088700 /* TPEmptyViewController.m */; };
-		6C519D8D157914B000088700 /* TPEmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D8B157914B000088700 /* TPEmptyViewController.xib */; };
+		A96018761579F70800ED697F /* TPIpodExampleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018701579F70800ED697F /* TPIpodExampleProvider.m */; };
+		A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018741579F70800ED697F /* TPMusicPlayerViewController.m */; };
+		A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */; };
+		A96018811579F8E000ED697F /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A960187A1579F8E000ED697F /* AutoScrollLabel.m */; };
+		A96018821579F8E000ED697F /* NSDateFormatter+Duration.m in Sources */ = {isa = PBXBuildFile; fileRef = A960187C1579F8E000ED697F /* NSDateFormatter+Duration.m */; };
+		A96018831579F8E000ED697F /* OBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A960187E1579F8E000ED697F /* OBSlider.m */; };
+		A96018841579F8E000ED697F /* UIImageView+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018801579F8E000ED697F /* UIImageView+Reflection.m */; };
+		A96018861579F99300ED697F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96018851579F99300ED697F /* MediaPlayer.framework */; };
+		A96018881579FAD800ED697F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96018871579FAD800ED697F /* QuartzCore.framework */; };
 		A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7132F15775F33004283F7 /* UIKit.framework */; };
 		A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133115775F33004283F7 /* Foundation.framework */; };
 		A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F7133315775F33004283F7 /* CoreGraphics.framework */; };
@@ -45,6 +52,8 @@
 		A9F7134715775F34004283F7 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134615775F34004283F7 /* first@2x.png */; };
 		A9F7134C15775F34004283F7 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134B15775F34004283F7 /* second.png */; };
 		A9F7134E15775F34004283F7 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7134D15775F34004283F7 /* second@2x.png */; };
+		A9F713761579EE7A004283F7 /* TPEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F713741579EE7A004283F7 /* TPEmptyViewController.m */; };
+		A9F713771579EE7A004283F7 /* TPEmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F713751579EE7A004283F7 /* TPEmptyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,9 +84,23 @@
 		6C519D841579145A00088700 /* TPLocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPLocalMusicViewController.h; path = Controllers/TPLocalMusicViewController.h; sourceTree = "<group>"; };
 		6C519D851579145A00088700 /* TPLocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPLocalMusicViewController.m; path = Controllers/TPLocalMusicViewController.m; sourceTree = "<group>"; };
 		6C519D861579145A00088700 /* TPLocalMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPLocalMusicViewController.xib; path = Controllers/TPLocalMusicViewController.xib; sourceTree = "<group>"; };
-		6C519D89157914B000088700 /* TPEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPEmptyViewController.h; path = Controllers/TPEmptyViewController.h; sourceTree = "<group>"; };
-		6C519D8A157914B000088700 /* TPEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPEmptyViewController.m; path = Controllers/TPEmptyViewController.m; sourceTree = "<group>"; };
-		6C519D8B157914B000088700 /* TPEmptyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPEmptyViewController.xib; path = Controllers/TPEmptyViewController.xib; sourceTree = "<group>"; };
+		A960186F1579F70800ED697F /* TPIpodExampleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPIpodExampleProvider.h; path = MusicPlayer/TPIpodExampleProvider.h; sourceTree = "<group>"; };
+		A96018701579F70800ED697F /* TPIpodExampleProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPIpodExampleProvider.m; path = MusicPlayer/TPIpodExampleProvider.m; sourceTree = "<group>"; };
+		A96018711579F70800ED697F /* TPMusicPlayerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDataSource.h; path = MusicPlayer/TPMusicPlayerDataSource.h; sourceTree = "<group>"; };
+		A96018721579F70800ED697F /* TPMusicPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDelegate.h; path = MusicPlayer/TPMusicPlayerDelegate.h; sourceTree = "<group>"; };
+		A96018731579F70800ED697F /* TPMusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerViewController.h; path = MusicPlayer/TPMusicPlayerViewController.h; sourceTree = "<group>"; };
+		A96018741579F70800ED697F /* TPMusicPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPMusicPlayerViewController.m; path = MusicPlayer/TPMusicPlayerViewController.m; sourceTree = "<group>"; };
+		A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPMusicPlayerViewController.xib; path = MusicPlayer/TPMusicPlayerViewController.xib; sourceTree = "<group>"; };
+		A96018791579F8E000ED697F /* AutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoScrollLabel.h; path = MusicPlayer/AutoScrollLabel.h; sourceTree = "<group>"; };
+		A960187A1579F8E000ED697F /* AutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoScrollLabel.m; path = MusicPlayer/AutoScrollLabel.m; sourceTree = "<group>"; };
+		A960187B1579F8E000ED697F /* NSDateFormatter+Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDateFormatter+Duration.h"; path = "MusicPlayer/NSDateFormatter+Duration.h"; sourceTree = "<group>"; };
+		A960187C1579F8E000ED697F /* NSDateFormatter+Duration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+Duration.m"; path = "MusicPlayer/NSDateFormatter+Duration.m"; sourceTree = "<group>"; };
+		A960187D1579F8E000ED697F /* OBSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OBSlider.h; path = MusicPlayer/OBSlider.h; sourceTree = "<group>"; };
+		A960187E1579F8E000ED697F /* OBSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OBSlider.m; path = MusicPlayer/OBSlider.m; sourceTree = "<group>"; };
+		A960187F1579F8E000ED697F /* UIImageView+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Reflection.h"; path = "MusicPlayer/UIImageView+Reflection.h"; sourceTree = "<group>"; };
+		A96018801579F8E000ED697F /* UIImageView+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Reflection.m"; path = "MusicPlayer/UIImageView+Reflection.m"; sourceTree = "<group>"; };
+		A96018851579F99300ED697F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A96018871579FAD800ED697F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A9F7132B15775F33004283F7 /* Tanplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tanplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F7132F15775F33004283F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9F7133115775F33004283F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +115,9 @@
 		A9F7134615775F34004283F7 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		A9F7134B15775F34004283F7 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		A9F7134D15775F34004283F7 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		A9F713731579EE7A004283F7 /* TPEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPEmptyViewController.h; path = Controllers/TPEmptyViewController.h; sourceTree = "<group>"; };
+		A9F713741579EE7A004283F7 /* TPEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPEmptyViewController.m; path = Controllers/TPEmptyViewController.m; sourceTree = "<group>"; };
+		A9F713751579EE7A004283F7 /* TPEmptyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPEmptyViewController.xib; path = Controllers/TPEmptyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +128,8 @@
 				A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */,
 				A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */,
 				A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */,
+				A96018861579F99300ED697F /* MediaPlayer.framework in Frameworks */,
+				A96018881579FAD800ED697F /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,11 +173,33 @@
 				6C519D841579145A00088700 /* TPLocalMusicViewController.h */,
 				6C519D851579145A00088700 /* TPLocalMusicViewController.m */,
 				6C519D861579145A00088700 /* TPLocalMusicViewController.xib */,
-				6C519D89157914B000088700 /* TPEmptyViewController.h */,
-				6C519D8A157914B000088700 /* TPEmptyViewController.m */,
-				6C519D8B157914B000088700 /* TPEmptyViewController.xib */,
+				A9F713731579EE7A004283F7 /* TPEmptyViewController.h */,
+				A9F713741579EE7A004283F7 /* TPEmptyViewController.m */,
+				A9F713751579EE7A004283F7 /* TPEmptyViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A960186D1579F6F900ED697F /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A96018791579F8E000ED697F /* AutoScrollLabel.h */,
+				A960187A1579F8E000ED697F /* AutoScrollLabel.m */,
+				A960187B1579F8E000ED697F /* NSDateFormatter+Duration.h */,
+				A960187C1579F8E000ED697F /* NSDateFormatter+Duration.m */,
+				A960187D1579F8E000ED697F /* OBSlider.h */,
+				A960187E1579F8E000ED697F /* OBSlider.m */,
+				A960187F1579F8E000ED697F /* UIImageView+Reflection.h */,
+				A96018801579F8E000ED697F /* UIImageView+Reflection.m */,
+				A960186F1579F70800ED697F /* TPIpodExampleProvider.h */,
+				A96018701579F70800ED697F /* TPIpodExampleProvider.m */,
+				A96018711579F70800ED697F /* TPMusicPlayerDataSource.h */,
+				A96018721579F70800ED697F /* TPMusicPlayerDelegate.h */,
+				A96018731579F70800ED697F /* TPMusicPlayerViewController.h */,
+				A96018741579F70800ED697F /* TPMusicPlayerViewController.m */,
+				A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */,
+			);
+			name = MusicPlayer;
 			sourceTree = "<group>";
 		};
 		A9F7132015775F33004283F7 = {
@@ -172,6 +222,8 @@
 		A9F7132E15775F33004283F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A96018871579FAD800ED697F /* QuartzCore.framework */,
+				A96018851579F99300ED697F /* MediaPlayer.framework */,
 				A9F7132F15775F33004283F7 /* UIKit.framework */,
 				A9F7133115775F33004283F7 /* Foundation.framework */,
 				A9F7133315775F33004283F7 /* CoreGraphics.framework */,
@@ -182,6 +234,7 @@
 		A9F7133515775F33004283F7 /* Tanplay */ = {
 			isa = PBXGroup;
 			children = (
+				A960186D1579F6F900ED697F /* MusicPlayer */,
 				6C519D831579138E00088700 /* Controllers */,
 				A9F7133E15775F33004283F7 /* AppDelegate.h */,
 				A9F7133F15775F33004283F7 /* AppDelegate.m */,
@@ -286,7 +339,8 @@
 				6C519D7D157910A000088700 /* Icon.png in Resources */,
 				6C519D7E157910A000088700 /* Icon@2x.png in Resources */,
 				6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */,
-				6C519D8D157914B000088700 /* TPEmptyViewController.xib in Resources */,
+				A9F713771579EE7A004283F7 /* TPEmptyViewController.xib in Resources */,
+				A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +354,13 @@
 				A9F7133C15775F33004283F7 /* main.m in Sources */,
 				A9F7134015775F33004283F7 /* AppDelegate.m in Sources */,
 				6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */,
-				6C519D8C157914B000088700 /* TPEmptyViewController.m in Sources */,
+				A9F713761579EE7A004283F7 /* TPEmptyViewController.m in Sources */,
+				A96018761579F70800ED697F /* TPIpodExampleProvider.m in Sources */,
+				A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */,
+				A96018811579F8E000ED697F /* AutoScrollLabel.m in Sources */,
+				A96018821579F8E000ED697F /* NSDateFormatter+Duration.m in Sources */,
+				A96018831579F8E000ED697F /* OBSlider.m in Sources */,
+				A96018841579F8E000ED697F /* UIImageView+Reflection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

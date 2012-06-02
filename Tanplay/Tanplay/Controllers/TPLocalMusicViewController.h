@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPLocalMusicViewController : UITableViewController
+@interface TPLocalMusicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

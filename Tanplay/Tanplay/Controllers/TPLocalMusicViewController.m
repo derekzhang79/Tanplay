@@ -7,6 +7,9 @@
 //
 
 #import "TPLocalMusicViewController.h"
+#import "TPEmptyViewController.h"
+#import "TPMusicPlayerViewController.h"
+#import "TPIpodExampleProvider.h"
 
 @implementation TPLocalMusicViewController
 
@@ -15,16 +18,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
-    }
-    return self;
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-
+        self.tabBarItem.title = @"本地音乐";
+        self.title = @"本地音乐";
     }
     return self;
 }
@@ -94,17 +89,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    int rows = 0;
+    int rowCount = 0;
     switch (section) {
         case 0:
-            rows = 2;
+            rowCount = 1;
             break;
             
         default:
             break;
     }
     
-    return rows;
+    return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -116,7 +111,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    cell.textLabel.text = @"iPod歌曲";
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -160,6 +156,22 @@
 }
 */
 
+#pragma mark - test play
+- (void)testPlay:(TPMusicPlayerViewController *)contoller
+{
+    TPiPodExampleProvider *exampleProvider = [TPiPodExampleProvider new];
+    exampleProvider.controller = contoller;
+    
+    contoller.dataSource = exampleProvider;
+    contoller.delegate = exampleProvider;
+    
+    contoller.shouldHideNextTrackButtonAtBoundary = YES;
+    contoller.shouldHidePreviousTrackButtonAtBoundary = YES;
+    
+    [contoller reloadData];
+    [contoller play];
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -172,6 +184,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    TPMusicPlayerViewController *controller = [[[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil] autorelease];
+    [self.navigationController pushViewController:controller animated:YES];
+    [self testPlay:controller];
 }
+
+
 
 @end
