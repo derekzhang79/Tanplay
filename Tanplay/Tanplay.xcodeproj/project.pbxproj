@@ -34,6 +34,12 @@
 		6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D851579145A00088700 /* TPLocalMusicViewController.m */; };
 		6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D861579145A00088700 /* TPLocalMusicViewController.xib */; };
 		6CCD4B1C157A6074001D7C72 /* TPiPodProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */; };
+		6CCD4B21157A664C001D7C72 /* audio_btn_airplay_blue_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1D157A664C001D7C72 /* audio_btn_airplay_blue_h.png */; };
+		6CCD4B22157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1E157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png */; };
+		6CCD4B23157A664C001D7C72 /* cell_song.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1F157A664C001D7C72 /* cell_song.png */; };
+		6CCD4B24157A664C001D7C72 /* cell_song@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B20157A664C001D7C72 /* cell_song@2x.png */; };
+		6CCD4B3C157A6D2F001D7C72 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */; };
+		6CCD4B3E157A7871001D7C72 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */; };
 		A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018741579F70800ED697F /* TPMusicPlayerViewController.m */; };
 		A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */; };
 		A96018811579F8E000ED697F /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A960187A1579F8E000ED697F /* AutoScrollLabel.m */; };
@@ -88,6 +94,12 @@
 		6C519D861579145A00088700 /* TPLocalMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPLocalMusicViewController.xib; path = Controllers/TPLocalMusicViewController.xib; sourceTree = "<group>"; };
 		6CCD4B1A157A6073001D7C72 /* TPiPodProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPiPodProvider.h; path = MusicPlayer/TPiPodProvider.h; sourceTree = "<group>"; };
 		6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPiPodProvider.m; path = MusicPlayer/TPiPodProvider.m; sourceTree = "<group>"; };
+		6CCD4B1D157A664C001D7C72 /* audio_btn_airplay_blue_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = audio_btn_airplay_blue_h.png; path = Resources/audio_btn_airplay_blue_h.png; sourceTree = "<group>"; };
+		6CCD4B1E157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "audio_btn_airplay_blue_h@2x.png"; path = "Resources/audio_btn_airplay_blue_h@2x.png"; sourceTree = "<group>"; };
+		6CCD4B1F157A664C001D7C72 /* cell_song.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cell_song.png; path = Resources/cell_song.png; sourceTree = "<group>"; };
+		6CCD4B20157A664C001D7C72 /* cell_song@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell_song@2x.png"; path = "Resources/cell_song@2x.png"; sourceTree = "<group>"; };
+		6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A96018711579F70800ED697F /* TPMusicPlayerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDataSource.h; path = MusicPlayer/TPMusicPlayerDataSource.h; sourceTree = "<group>"; };
 		A96018721579F70800ED697F /* TPMusicPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDelegate.h; path = MusicPlayer/TPMusicPlayerDelegate.h; sourceTree = "<group>"; };
 		A96018731579F70800ED697F /* TPMusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerViewController.h; path = MusicPlayer/TPMusicPlayerViewController.h; sourceTree = "<group>"; };
@@ -129,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CCD4B3E157A7871001D7C72 /* CoreMedia.framework in Frameworks */,
+				6CCD4B3C157A6D2F001D7C72 /* AVFoundation.framework in Frameworks */,
 				A9F7133015775F33004283F7 /* UIKit.framework in Frameworks */,
 				A9F7133215775F33004283F7 /* Foundation.framework in Frameworks */,
 				A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */,
@@ -143,6 +157,10 @@
 		6C519D4D15790DEC00088700 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				6CCD4B1D157A664C001D7C72 /* audio_btn_airplay_blue_h.png */,
+				6CCD4B1E157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png */,
+				6CCD4B1F157A664C001D7C72 /* cell_song.png */,
+				6CCD4B20157A664C001D7C72 /* cell_song@2x.png */,
 				A9601889157A4AED00ED697F /* backbutton@2x.png */,
 				A960188A157A4AED00ED697F /* fade_overlay@2x.png */,
 				6C519D7B157910A000088700 /* Icon.png */,
@@ -228,6 +246,8 @@
 		A9F7132E15775F33004283F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */,
+				6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */,
 				A96018871579FAD800ED697F /* QuartzCore.framework */,
 				A96018851579F99300ED697F /* MediaPlayer.framework */,
 				A9F7132F15775F33004283F7 /* UIKit.framework */,
@@ -349,6 +369,10 @@
 				A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */,
 				A960188B157A4AEE00ED697F /* backbutton@2x.png in Resources */,
 				A960188C157A4AEE00ED697F /* fade_overlay@2x.png in Resources */,
+				6CCD4B21157A664C001D7C72 /* audio_btn_airplay_blue_h.png in Resources */,
+				6CCD4B22157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png in Resources */,
+				6CCD4B23157A664C001D7C72 /* cell_song.png in Resources */,
+				6CCD4B24157A664C001D7C72 /* cell_song@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

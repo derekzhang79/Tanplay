@@ -2,7 +2,7 @@
 //  TPMusicPlayerDelegate.h
 //  Tanplay
 //
-//  Created by ding jie on 5/31/12.
+//  Created by on 5/31/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

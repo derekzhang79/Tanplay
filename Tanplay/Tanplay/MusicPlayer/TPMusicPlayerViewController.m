@@ -2,7 +2,7 @@
 //  TPMusicPlayerViewController.m
 //  Tanplay
 //
-//  Created by ding jie on 5/31/12.
+//  Created by on 5/31/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -21,6 +21,7 @@
 -(void)updateSeekUI;
 -(void)updateTrackDisplay;
 -(void)adjustDirectionalButtonStates;
+-(void)addAirplayPicker;
 
 @property (nonatomic, retain) IBOutlet UISlider* volumeSlider; // Volume Slider
 @property (nonatomic, retain) IBOutlet UISlider* progressSlider; // Progress Slider buried in the Progress View
@@ -153,6 +154,7 @@
     self.trackTitleLabel.textColor = [UIColor whiteColor];
     [self.trackTitleLabel setFont:[UIFont boldSystemFontOfSize:12]];
     self.navgationBar.hidden = YES;
+    [self addAirplayPicker];
 }
 
 - (void)viewDidUnload
@@ -209,13 +211,12 @@
         self.albumArtReflection.image = [self.albumArtImageView reflectedImageWithHeight:self.albumArtReflection.frame.size.height];
         self.imageIsPlaceholder = YES;
         
-        CATransition* transition = [CATransition animation];
-        transition.type = kCATransitionPush;
-        transition.subtype = self.lastDirectionChangePositive ? kCATransitionFromRight : kCATransitionFromLeft;
-        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-        [[self.albumArtImageView layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
-
-        [[self.albumArtReflection layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
+//        CATransition* transition = [CATransition animation];
+//        transition.type = kCATransitionPush;
+//        transition.subtype = self.lastDirectionChangePositive ? kCATransitionFromRight : kCATransitionFromLeft;
+//        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+//        [[self.albumArtImageView layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
+//        [[self.albumArtReflection layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
 
 
         // Request the image. 
@@ -416,6 +417,15 @@
     }
     if ( imageName )
         [self.repeatButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+}
+
+-(void)addAirplayPicker
+{
+    MPVolumeView *volumeView = [[[MPVolumeView alloc] init] autorelease];
+    [volumeView setShowsVolumeSlider:NO];
+    [volumeView sizeToFit];
+    volumeView.frame = CGRectMake(258, self.controlsToolbar.frame.origin.y + 15, volumeView.frame.size.width, volumeView.frame.size.height);
+    [self.view addSubview:volumeView];
 }
 
 #pragma mark Repeat mode

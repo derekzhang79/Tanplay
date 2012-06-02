@@ -111,9 +111,15 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    cell.textLabel.text = @"iPod歌曲";
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+    if(indexPath.section == 0)
+    {
+        if(indexPath.row == 0)
+        {
+            cell.textLabel.text = @"iPod歌曲";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.imageView.image = [UIImage imageNamed:@"cell_song"];
+        }
+    }
     return cell;
 }
 
@@ -165,8 +171,8 @@
     contoller.dataSource = exampleProvider;
     contoller.delegate = exampleProvider;
     
-    contoller.shouldHideNextTrackButtonAtBoundary = YES;
-    contoller.shouldHidePreviousTrackButtonAtBoundary = YES;
+//    contoller.shouldHideNextTrackButtonAtBoundary = YES;
+//    contoller.shouldHidePreviousTrackButtonAtBoundary = YES;
     
     [contoller reloadData];
     [contoller play];

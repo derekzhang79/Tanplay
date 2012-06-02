@@ -11,34 +11,48 @@
 
 @implementation TPiPodProvider
 
-@synthesize musicPlayer;
+@synthesize iPodPlayer;
 @synthesize controller;
 @synthesize mediaItems;
+@synthesize audioPlayer;
+@synthesize currentTrack;
 
 -(id)init {
     self = [super init];
     if ( self ){
         
-        self.musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+        self.audioPlayer = [[[AVPlayer alloc] init] autorelease];
+        self.audioPlayer.allowsAirPlayVideo = YES;
+        
+        self.iPodPlayer = [MPMusicPlayerController applicationMusicPlayer];
         
         // Using an unspecific query we extract all files from the library for playback.
-        MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+        MPMediaQuery *everything = [[[MPMediaQuery alloc] init] autorelease];
 
         self.mediaItems = [everything items];
         
-        [self.musicPlayer setQueueWithQuery:everything];
+//        [self.iPodPlayer setQueueWithQuery:everything];
         
         [self.controller reloadData];
         [self.controller play];
         // This HACK hides the volume overlay when changing the volume.
         // It's insipired by http://stackoverflow.com/questions/3845222/iphone-sdk-how-to-disable-the-volume-indicator-view-if-the-hardware-buttons-ar
-        MPVolumeView* view = [MPVolumeView new];
+        MPVolumeView* view = [[MPVolumeView alloc] init];
         // Put it far offscreen
-        view.frame = CGRectMake(1000, 1000, 120, 12);
+        view.frame = CGRectMake(1000, 1000, 120, 120);
         [[UIApplication sharedApplication].keyWindow addSubview:view];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    self.audioPlayer = nil;
+    self.iPodPlayer = nil;
+    self.controller = nil;
+    self.mediaItems = nil;
+    [super dealloc];
 }
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {
@@ -81,29 +95,37 @@
 #pragma mark Delegate Methods ( Used to control the music player )
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player didChangeTrack:(NSUInteger)track {
-    [self.musicPlayer setNowPlayingItem:[self.mediaItems objectAtIndex:track]];
+    //[self.iPodPlayer setNowPlayingItem:[self.mediaItems objectAtIndex:track]];
+    MPMediaItem *item = [self.mediaItems objectAtIndex:track];
+    AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[item valueForProperty:MPMediaItemPropertyAssetURL]];
+    [self.audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
+    currentTrack = track;
 }
 
 -(void)musicPlayerDidStartPlaying:(TPMusicPlayerViewController *)player {
-    [self.musicPlayer play];
+    //[self.iPodPlayer play];
+    [self.audioPlayer play];
 }
 
 -(void)musicPlayerDidStopPlaying:(TPMusicPlayerViewController *)player {
-    [self.musicPlayer pause];
+    //[self.iPodPlayer pause];
+    [self.audioPlayer pause];
 }
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player didChangeVolume:(CGFloat)volume {
-    [self.musicPlayer setVolume:volume];
+    [self.iPodPlayer setVolume:volume];
+    //self.audioPlayer.volume = volume;
 }
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player didSeekToPosition:(CGFloat)position {
-    [self.musicPlayer setCurrentPlaybackTime:position];
+    //[self.iPodPlayer setCurrentPlaybackTime:position];
+    CMTime time = CMTimeMake(position, 1);
+    [self.audioPlayer seekToTime:time];
 }
 
 -(void)musicPlayerActionRequested:(TPMusicPlayerViewController *)musicPlayer {
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Action" message:@"The Player's action button was pressed." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    [alertView show];
-    
+    [alertView show];    
 }
 
 -(void)musicPlayerBackRequested:(TPMusicPlayerViewController *)mp {
