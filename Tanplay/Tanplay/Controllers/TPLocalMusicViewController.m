@@ -10,6 +10,7 @@
 #import "TPEmptyViewController.h"
 #import "TPMusicPlayerViewController.h"
 #import "TPiPodProvider.h"
+#import "TPSongListViewController.h"
 
 @implementation TPLocalMusicViewController
 
@@ -162,21 +163,6 @@
 }
 */
 
-#pragma mark - test play
-- (void)testPlay:(TPMusicPlayerViewController *)contoller
-{
-    TPiPodProvider *exampleProvider = [[TPiPodProvider alloc] init];
-    exampleProvider.controller = contoller;
-    
-    contoller.dataSource = exampleProvider;
-    contoller.delegate = exampleProvider;
-    
-//    contoller.shouldHideNextTrackButtonAtBoundary = YES;
-//    contoller.shouldHidePreviousTrackButtonAtBoundary = YES;
-    
-    [contoller reloadData];
-    [contoller play];
-}
 
 #pragma mark - Table view delegate
 
@@ -190,9 +176,8 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    TPMusicPlayerViewController *controller = [[[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil] autorelease];
+    TPSongListViewController *controller = [[[TPSongListViewController alloc] initWithNibName:@"TPSongListViewController" bundle:nil] autorelease];
     [self.navigationController pushViewController:controller animated:YES];
-    [self testPlay:controller];
 }
 
 

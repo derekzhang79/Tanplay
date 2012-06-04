@@ -40,6 +40,8 @@
 		6CCD4B24157A664C001D7C72 /* cell_song@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B20157A664C001D7C72 /* cell_song@2x.png */; };
 		6CCD4B3C157A6D2F001D7C72 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */; };
 		6CCD4B3E157A7871001D7C72 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */; };
+		A9225DAB157CA28100C16EAE /* TPSongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9225DA9157CA28100C16EAE /* TPSongListViewController.m */; };
+		A9225DAC157CA28100C16EAE /* TPSongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9225DAA157CA28100C16EAE /* TPSongListViewController.xib */; };
 		A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018741579F70800ED697F /* TPMusicPlayerViewController.m */; };
 		A96018781579F70800ED697F /* TPMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */; };
 		A96018811579F8E000ED697F /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A960187A1579F8E000ED697F /* AutoScrollLabel.m */; };
@@ -100,6 +102,9 @@
 		6CCD4B20157A664C001D7C72 /* cell_song@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell_song@2x.png"; path = "Resources/cell_song@2x.png"; sourceTree = "<group>"; };
 		6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A9225DA8157CA28100C16EAE /* TPSongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPSongListViewController.h; path = Controllers/TPSongListViewController.h; sourceTree = "<group>"; };
+		A9225DA9157CA28100C16EAE /* TPSongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPSongListViewController.m; path = Controllers/TPSongListViewController.m; sourceTree = "<group>"; };
+		A9225DAA157CA28100C16EAE /* TPSongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPSongListViewController.xib; path = Controllers/TPSongListViewController.xib; sourceTree = "<group>"; };
 		A96018711579F70800ED697F /* TPMusicPlayerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDataSource.h; path = MusicPlayer/TPMusicPlayerDataSource.h; sourceTree = "<group>"; };
 		A96018721579F70800ED697F /* TPMusicPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerDelegate.h; path = MusicPlayer/TPMusicPlayerDelegate.h; sourceTree = "<group>"; };
 		A96018731579F70800ED697F /* TPMusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPMusicPlayerViewController.h; path = MusicPlayer/TPMusicPlayerViewController.h; sourceTree = "<group>"; };
@@ -200,6 +205,9 @@
 				A9F713731579EE7A004283F7 /* TPEmptyViewController.h */,
 				A9F713741579EE7A004283F7 /* TPEmptyViewController.m */,
 				A9F713751579EE7A004283F7 /* TPEmptyViewController.xib */,
+				A9225DA8157CA28100C16EAE /* TPSongListViewController.h */,
+				A9225DA9157CA28100C16EAE /* TPSongListViewController.m */,
+				A9225DAA157CA28100C16EAE /* TPSongListViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -373,6 +381,7 @@
 				6CCD4B22157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png in Resources */,
 				6CCD4B23157A664C001D7C72 /* cell_song.png in Resources */,
 				6CCD4B24157A664C001D7C72 /* cell_song@2x.png in Resources */,
+				A9225DAC157CA28100C16EAE /* TPSongListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +402,7 @@
 				A96018831579F8E000ED697F /* OBSlider.m in Sources */,
 				A96018841579F8E000ED697F /* UIImageView+Reflection.m in Sources */,
 				6CCD4B1C157A6074001D7C72 /* TPiPodProvider.m in Sources */,
+				A9225DAB157CA28100C16EAE /* TPSongListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

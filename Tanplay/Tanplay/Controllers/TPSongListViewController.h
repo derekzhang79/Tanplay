@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPiPodProvider.h"
 
-@interface TPSongListViewController : UIViewController
+@interface TPSongListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    
+}
+
+@property (nonatomic, retain) TPiPodProvider *iPodProvider; 
 
 @end

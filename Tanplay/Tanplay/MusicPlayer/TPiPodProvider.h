@@ -17,8 +17,7 @@
 }
 
 @property (nonatomic, retain) AVPlayer* audioPlayer;
-@property (nonatomic, retain) MPMusicPlayerController* iPodPlayer; // An instance of an ipod music player
-@property (nonatomic, retain) TPMusicPlayerViewController* controller; // the TPMusicPlayerViewController
+@property (nonatomic, assign) TPMusicPlayerViewController *controller;
 @property (nonatomic, retain) NSArray* mediaItems; // An array holding items in the playback queue
 @property (nonatomic) NSInteger currentTrack;
 
