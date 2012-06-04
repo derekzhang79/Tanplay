@@ -122,5 +122,6 @@
 -(IBAction)nextAction:(id)sender;
 -(IBAction)playAction:(id)sender;
 -(IBAction)sliderValueChanged:(id)slider;
+-(IBAction)coverArtTapped:(id)sender;
 
 @end
