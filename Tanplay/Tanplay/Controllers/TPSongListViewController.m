@@ -7,21 +7,18 @@
 //
 
 #import "TPSongListViewController.h"
-#import "TPMusicPlayerViewController.h"
 
 @interface TPSongListViewController ()
 - (void)playSongWithTrack:(NSInteger)indexPath;
 @end
 
 @implementation TPSongListViewController
-@synthesize iPodProvider;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.iPodProvider = [[[TPiPodProvider alloc] init] autorelease];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"正在播放" style:UIBarButtonItemStylePlain target:self action:@selector(showPlayer)];
     }
     return self;
@@ -48,7 +45,6 @@
 
 - (void)dealloc
 {
-    self.iPodProvider = nil;
     [super dealloc];
 }
 
@@ -63,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.iPodProvider.mediaItems.count;
+    return [TPiPodProvider sharediPodProvider].mediaItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,10 +73,10 @@
     
     if(indexPath.section == 0)
     {
-        cell.textLabel.text = [self.iPodProvider musicPlayer:nil titleForTrack:indexPath.row];
-        NSString *detail = [self.iPodProvider musicPlayer:nil albumForTrack:indexPath.row];
+        cell.textLabel.text = [[TPiPodProvider sharediPodProvider] musicPlayer:nil titleForTrack:indexPath.row];
+        NSString *detail = [[TPiPodProvider sharediPodProvider] musicPlayer:nil albumForTrack:indexPath.row];
         detail = [detail stringByAppendingString:@"-"];
-        detail = [detail stringByAppendingString: [self.iPodProvider musicPlayer:nil artistForTrack:indexPath.row]];
+        detail = [detail stringByAppendingString: [[TPiPodProvider sharediPodProvider] musicPlayer:nil artistForTrack:indexPath.row]];
         cell.detailTextLabel.text = detail;
     }
     
@@ -128,30 +124,12 @@
 
 - (void)showPlayer
 {
-    if(self.iPodProvider.controller == nil)
-    {
-        [self playSongWithTrack:0];
-    }
-    else 
-    {
-        [self presentViewController:self.iPodProvider.controller animated:YES completion:nil];
-    }
+    [[TPiPodProvider sharediPodProvider] showPlayerView:self.view];
 }
 
 - (void)playSongWithTrack:(NSInteger) track
-{
-    if(self.iPodProvider.controller == nil)
-    {
-        TPMusicPlayerViewController *playerViewController = [[[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil] autorelease];
-        self.iPodProvider.controller = playerViewController;
-        playerViewController.dataSource = self.iPodProvider;
-        playerViewController.delegate = self.iPodProvider;
-    }
-    
-    [self presentViewController:self.iPodProvider.controller animated:YES completion:nil];
-    
-    [self.iPodProvider.controller reloadData]; 
-    [self.iPodProvider.controller playTrack:track atPosition:0 volume:0];  
+{ 
+    [[TPiPodProvider sharediPodProvider] playTrack:track];
 }
 
 

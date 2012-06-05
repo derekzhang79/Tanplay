@@ -8,10 +8,9 @@
 
 #import "TPiPodProvider.h"
 
-
 @implementation TPiPodProvider
 
-@synthesize controller;
+@synthesize playerViewController;
 @synthesize mediaItems;
 @synthesize audioPlayer;
 @synthesize currentTrack;
@@ -36,6 +35,11 @@
         view.frame = CGRectMake(1000, 1000, 120, 120);
         [[UIApplication sharedApplication].keyWindow addSubview:view];
          */
+        
+        self.playerViewController = [[[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil] autorelease];
+        self.playerViewController.dataSource = self;
+        self.playerViewController.delegate = self;
+        
     }
     
     return self;
@@ -43,9 +47,42 @@
 
 - (void)dealloc
 {
+    self.playerViewController = nil;
     self.audioPlayer = nil;
     self.mediaItems = nil;
     [super dealloc];
+}
+
++ (TPiPodProvider *)sharediPodProvider
+{
+    static TPiPodProvider *provider = nil;
+    
+    @synchronized(self)
+    {
+        if(provider == nil)
+        {
+            provider = [[TPiPodProvider alloc] init];
+        }
+    }
+    
+    return provider;
+}
+
+- (void)doShowPlayerAnimation
+{
+   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.playerViewController animated:YES completion:nil];    
+}
+
+- (void)playTrack:(NSInteger)track
+{
+    [self doShowPlayerAnimation];
+    [self.playerViewController reloadData]; 
+    [self.playerViewController playTrack:track atPosition:0 volume:0]; 
+}
+
+- (void)showPlayerView:(UIView *)fromView
+{
+    [self doShowPlayerAnimation];
 }
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {

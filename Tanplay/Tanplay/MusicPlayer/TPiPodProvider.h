@@ -16,8 +16,13 @@
 
 }
 
+- (void)playTrack:(NSInteger)track;
+- (void)showPlayerView:(UIView *)fromView;
+
++ (TPiPodProvider *)sharediPodProvider;
+
 @property (nonatomic, retain) AVPlayer* audioPlayer;
-@property (nonatomic, assign) TPMusicPlayerViewController *controller;
+@property (nonatomic, retain) TPMusicPlayerViewController *playerViewController;
 @property (nonatomic, retain) NSArray* mediaItems; // An array holding items in the playback queue
 @property (nonatomic) NSInteger currentTrack;
 
