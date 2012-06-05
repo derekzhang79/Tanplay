@@ -124,7 +124,7 @@
 
 - (void)showPlayer
 {
-    [[TPiPodProvider sharediPodProvider] showPlayerView:self.view];
+    [[TPiPodProvider sharediPodProvider] showPlayerView:self];
 }
 
 - (void)playSongWithTrack:(NSInteger) track

@@ -419,11 +419,12 @@
 								<reference key="IBUIToolbar" ref="578893802"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="190745889">
+							<object class="IBUIBarButtonItem" id="778536667">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIToolbar" ref="578893802"/>
+								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="778536667">
+							<object class="IBUIBarButtonItem" id="43611504">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIToolbar" ref="578893802"/>
 								<int key="IBUISystemItemIdentifier">5</int>
@@ -829,8 +830,8 @@
 							<reference ref="760091794"/>
 							<reference ref="356141574"/>
 							<reference ref="403599178"/>
-							<reference ref="190745889"/>
 							<reference ref="778536667"/>
+							<reference ref="43611504"/>
 						</array>
 						<reference key="parent" ref="774585933"/>
 					</object>
@@ -1019,13 +1020,13 @@
 						<reference key="parent" ref="53878954"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">102</int>
-						<reference key="object" ref="190745889"/>
+						<int key="objectID">104</int>
+						<reference key="object" ref="778536667"/>
 						<reference key="parent" ref="578893802"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">104</int>
-						<reference key="object" ref="778536667"/>
+						<int key="objectID">106</int>
+						<reference key="object" ref="43611504"/>
 						<reference key="parent" ref="578893802"/>
 					</object>
 				</array>
@@ -1035,8 +1036,8 @@
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="102.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="104.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="106.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1079,7 +1080,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">105</int>
+			<int key="maxID">106</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1114,11 +1115,16 @@
 					<string key="className">TPMusicPlayerViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="coverArtTapped:">id</string>
 						<string key="nextAction:">id</string>
 						<string key="playAction:">id</string>
 						<string key="sliderValueChanged:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="coverArtTapped:">
+							<string key="name">coverArtTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="nextAction:">
 							<string key="name">nextAction:</string>
 							<string key="candidateClassName">id</string>

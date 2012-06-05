@@ -70,7 +70,25 @@
 
 - (void)doShowPlayerAnimation
 {
-   [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.playerViewController animated:YES completion:nil];    
+   //[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.playerViewController animated:YES completion:nil];    
+    self.playerViewController.view.frame = CGRectMake(0, 20, 320, 460);
+    [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:[UIApplication sharedApplication].keyWindow.rootViewController.view cache:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:0.6];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.playerViewController.view];
+    [UIView commitAnimations];    
+}
+
+- (void)doDismissPlayerAnimation
+{
+    [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:[UIApplication sharedApplication].keyWindow.rootViewController.view cache:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:0.6];
+    [playerViewController.view removeFromSuperview];
+    [UIView commitAnimations]; 
 }
 
 - (void)playTrack:(NSInteger)track
@@ -80,7 +98,7 @@
     [self.playerViewController playTrack:track atPosition:0 volume:0]; 
 }
 
-- (void)showPlayerView:(UIView *)fromView
+- (void)showPlayerView:(UIViewController *)from
 {
     [self doShowPlayerAnimation];
 }
@@ -155,7 +173,8 @@
 
 -(void)musicPlayerBackRequested:(TPMusicPlayerViewController *)musicPlayer {
     
-    [musicPlayer dismissViewControllerAnimated:YES completion:nil];    
+    //[musicPlayer dismissViewControllerAnimated:YES completion:nil];   
+    [self doDismissPlayerAnimation];
 }
 
 
