@@ -73,9 +73,9 @@
    //[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.playerViewController animated:YES completion:nil];    
     self.playerViewController.view.frame = CGRectMake(0, 20, 320, 460);
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:[UIApplication sharedApplication].keyWindow.rootViewController.view cache:YES];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:[UIApplication sharedApplication].keyWindow.rootViewController.view cache:YES];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:0.6];
+    [UIView setAnimationDuration:0.5];
     
     [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.playerViewController.view];
     [UIView commitAnimations];    
@@ -84,9 +84,9 @@
 - (void)doDismissPlayerAnimation
 {
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:[UIApplication sharedApplication].keyWindow.rootViewController.view cache:YES];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:[UIApplication sharedApplication].keyWindow.rootViewController.view cache:YES];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:0.6];
+    [UIView setAnimationDuration:0.5];
     [playerViewController.view removeFromSuperview];
     [UIView commitAnimations]; 
 }
