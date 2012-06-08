@@ -31,9 +31,7 @@
 
 - (void) dealloc
 {
-    self.scrubbingSpeeds = nil;
-    self.scrubbingSpeedChangePositions = nil;
-    [super dealloc];
+
 }
 
 

@@ -19,11 +19,11 @@
     self = [super init];
     if ( self ){
         
-        self.audioPlayer = [[[AVPlayer alloc] init] autorelease];
+        self.audioPlayer = [[AVPlayer alloc] init];
         self.audioPlayer.allowsAirPlayVideo = YES;
         
         // Using an unspecific query we extract all files from the library for playback.
-        MPMediaQuery *everything = [[[MPMediaQuery alloc] init] autorelease];
+        MPMediaQuery *everything = [[MPMediaQuery alloc] init];
 
         self.mediaItems = [everything items];
         
@@ -36,7 +36,7 @@
         [[UIApplication sharedApplication].keyWindow addSubview:view];
          */
         
-        self.playerViewController = [[[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil] autorelease];
+        self.playerViewController = [[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil];
         self.playerViewController.dataSource = self;
         self.playerViewController.delegate = self;
         
@@ -47,10 +47,7 @@
 
 - (void)dealloc
 {
-    self.playerViewController = nil;
-    self.audioPlayer = nil;
-    self.mediaItems = nil;
-    [super dealloc];
+
 }
 
 + (TPiPodProvider *)sharediPodProvider

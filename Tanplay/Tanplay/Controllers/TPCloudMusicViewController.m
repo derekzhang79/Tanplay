@@ -1,25 +1,26 @@
 //
-//  TPSongListViewController.m
+//  TPCloudMusicViewController.m
 //  Tanplay
 //
-//  Created by ding jie on 6/4/12.
+//  Created by ding jie on 6/7/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "TPSongListViewController.h"
+#import "TPCloudMusicViewController.h"
 
-@interface TPSongListViewController ()
-- (void)playSongWithTrack:(NSInteger)indexPath;
+@interface TPCloudMusicViewController ()
+
 @end
 
-@implementation TPSongListViewController
-
+@implementation TPCloudMusicViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"正在播放" style:UIBarButtonItemStylePlain target:self action:@selector(showPlayer)];
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.title = @"在线音乐";
+        self.title = @"在线音乐";
     }
     return self;
 }
@@ -32,7 +33,6 @@
 
 - (void)viewDidUnload
 {
-    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -41,11 +41,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)dealloc
-{
-    
 }
 
 #pragma mark - Table view data source
@@ -59,7 +54,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [TPiPodProvider sharediPodProvider].mediaItems.count;
+    int rowCount = 0;
+    switch (section) {
+        case 0:
+            rowCount = 1;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,18 +73,18 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     if(indexPath.section == 0)
     {
-        cell.textLabel.text = [[TPiPodProvider sharediPodProvider] musicPlayer:nil titleForTrack:indexPath.row];
-        NSString *detail = [[TPiPodProvider sharediPodProvider] musicPlayer:nil albumForTrack:indexPath.row];
-        detail = [detail stringByAppendingString:@"-"];
-        detail = [detail stringByAppendingString: [[TPiPodProvider sharediPodProvider] musicPlayer:nil artistForTrack:indexPath.row]];
-        cell.detailTextLabel.text = detail;
+        if(indexPath.row == 0)
+        {
+            cell.textLabel.text = @"百度公共电台";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.imageView.image = [UIImage imageNamed:@"cell_song"];
+        }
     }
-    
     return cell;
 }
 
@@ -122,23 +127,19 @@
  }
  */
 
-- (void)showPlayer
-{
-    [[TPiPodProvider sharediPodProvider] showPlayerView:self];
-}
-
-- (void)playSongWithTrack:(NSInteger) track
-{ 
-    [[TPiPodProvider sharediPodProvider] playTrack:track];
-}
-
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self playSongWithTrack:indexPath.row];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
-
 
 @end

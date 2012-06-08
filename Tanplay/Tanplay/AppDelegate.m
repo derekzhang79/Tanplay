@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TPLocalMusicViewController.h"
 #import "TPEmptyViewController.h"
+#import "TPCloudMusicViewController.h"
 
 @implementation AppDelegate
 
@@ -17,23 +18,24 @@
 
 - (void)dealloc
 {
-    [_window release];
-    [_tabBarController release];
-    [super dealloc];
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[[TPLocalMusicViewController alloc] initWithNibName:@"TPLocalMusicViewController" bundle:nil] autorelease];
-    UINavigationController *musicNavController = [[UINavigationController alloc] initWithRootViewController:viewController1];
-    musicNavController.navigationBar.barStyle = UIBarStyleBlack;
-    UIViewController *viewController2 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
-    UIViewController *viewController3 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
-    UIViewController *viewController4 = [[[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil] autorelease];
-    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:musicNavController, viewController2, viewController3, viewController4, nil];
+    UIViewController *viewController1 = [[TPLocalMusicViewController alloc] initWithNibName:@"TPLocalMusicViewController" bundle:nil];
+    UINavigationController *localMusicNavController = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    localMusicNavController.navigationBar.barStyle = UIBarStyleBlack;
+    UIViewController *viewController2 = [[TPCloudMusicViewController alloc] initWithNibName:@"TPCloudMusicViewController" bundle:nil];
+    UINavigationController *cloudMusicNavController = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    cloudMusicNavController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    UIViewController *viewController3 = [[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil];
+    UIViewController *viewController4 = [[TPEmptyViewController alloc] initWithNibName:@"TPEmptyViewController" bundle:nil];
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:localMusicNavController, cloudMusicNavController, viewController3, viewController4, nil];
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

@@ -40,6 +40,27 @@
 		6CCD4B24157A664C001D7C72 /* cell_song@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B20157A664C001D7C72 /* cell_song@2x.png */; };
 		6CCD4B3C157A6D2F001D7C72 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */; };
 		6CCD4B3E157A7871001D7C72 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */; };
+		A91ED4381580916E006D7BFA /* TPCloudMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4361580916D006D7BFA /* TPCloudMusicViewController.m */; };
+		A91ED4391580916E006D7BFA /* TPCloudMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91ED4371580916E006D7BFA /* TPCloudMusicViewController.xib */; };
+		A91ED43F1580929D006D7BFA /* btn_online_n.png in Resources */ = {isa = PBXBuildFile; fileRef = A91ED43B1580929D006D7BFA /* btn_online_n.png */; };
+		A91ED4401580929D006D7BFA /* btn_online_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91ED43C1580929D006D7BFA /* btn_online_n@2x.png */; };
+		A91ED4411580929D006D7BFA /* btn_online_s.png in Resources */ = {isa = PBXBuildFile; fileRef = A91ED43D1580929D006D7BFA /* btn_online_s.png */; };
+		A91ED4421580929D006D7BFA /* btn_online_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A91ED43E1580929D006D7BFA /* btn_online_s@2x.png */; };
+		A91ED44615809819006D7BFA /* TPChannelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED44415809818006D7BFA /* TPChannelListViewController.m */; };
+		A91ED44715809819006D7BFA /* TPChannelListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91ED44515809819006D7BFA /* TPChannelListViewController.xib */; };
+		A91ED44A1580999E006D7BFA /* TPBaiduPublicProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4491580999E006D7BFA /* TPBaiduPublicProvider.m */; };
+		A91ED46C1581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4591581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.m */; };
+		A91ED46D1581E102006D7BFA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED45B1581E102006D7BFA /* NSData+Base64.m */; };
+		A91ED46E1581E102006D7BFA /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED45D1581E102006D7BFA /* NSDate+RFC1123.m */; };
+		A91ED46F1581E102006D7BFA /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED45F1581E102006D7BFA /* NSDictionary+RequestEncoding.m */; };
+		A91ED4701581E102006D7BFA /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4611581E102006D7BFA /* NSString+MKNetworkKitAdditions.m */; };
+		A91ED4711581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4631581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.m */; };
+		A91ED4721581E102006D7BFA /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4651581E102006D7BFA /* MKNetworkEngine.m */; };
+		A91ED4731581E102006D7BFA /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED4681581E102006D7BFA /* MKNetworkOperation.m */; };
+		A91ED4741581E102006D7BFA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A91ED46B1581E102006D7BFA /* Reachability.m */; };
+		A91ED478158201F4006D7BFA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91ED475158201F4006D7BFA /* Security.framework */; };
+		A91ED479158201F4006D7BFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91ED476158201F4006D7BFA /* SystemConfiguration.framework */; };
+		A91ED47A158201F4006D7BFA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91ED477158201F4006D7BFA /* CFNetwork.framework */; };
 		A9225DAB157CA28100C16EAE /* TPSongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9225DA9157CA28100C16EAE /* TPSongListViewController.m */; };
 		A9225DAC157CA28100C16EAE /* TPSongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9225DAA157CA28100C16EAE /* TPSongListViewController.xib */; };
 		A96018771579F70800ED697F /* TPMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96018741579F70800ED697F /* TPMusicPlayerViewController.m */; };
@@ -102,6 +123,40 @@
 		6CCD4B20157A664C001D7C72 /* cell_song@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell_song@2x.png"; path = "Resources/cell_song@2x.png"; sourceTree = "<group>"; };
 		6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A91ED4351580916D006D7BFA /* TPCloudMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPCloudMusicViewController.h; path = Controllers/TPCloudMusicViewController.h; sourceTree = "<group>"; };
+		A91ED4361580916D006D7BFA /* TPCloudMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPCloudMusicViewController.m; path = Controllers/TPCloudMusicViewController.m; sourceTree = "<group>"; };
+		A91ED4371580916E006D7BFA /* TPCloudMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPCloudMusicViewController.xib; path = Controllers/TPCloudMusicViewController.xib; sourceTree = "<group>"; };
+		A91ED43B1580929D006D7BFA /* btn_online_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_online_n.png; path = Resources/btn_online_n.png; sourceTree = "<group>"; };
+		A91ED43C1580929D006D7BFA /* btn_online_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_online_n@2x.png"; path = "Resources/btn_online_n@2x.png"; sourceTree = "<group>"; };
+		A91ED43D1580929D006D7BFA /* btn_online_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_online_s.png; path = Resources/btn_online_s.png; sourceTree = "<group>"; };
+		A91ED43E1580929D006D7BFA /* btn_online_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_online_s@2x.png"; path = "Resources/btn_online_s@2x.png"; sourceTree = "<group>"; };
+		A91ED44315809818006D7BFA /* TPChannelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPChannelListViewController.h; path = Controllers/TPChannelListViewController.h; sourceTree = "<group>"; };
+		A91ED44415809818006D7BFA /* TPChannelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPChannelListViewController.m; path = Controllers/TPChannelListViewController.m; sourceTree = "<group>"; };
+		A91ED44515809819006D7BFA /* TPChannelListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPChannelListViewController.xib; path = Controllers/TPChannelListViewController.xib; sourceTree = "<group>"; };
+		A91ED4481580999E006D7BFA /* TPBaiduPublicProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPBaiduPublicProvider.h; path = MusicPlayer/TPBaiduPublicProvider.h; sourceTree = "<group>"; };
+		A91ED4491580999E006D7BFA /* TPBaiduPublicProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPBaiduPublicProvider.m; path = MusicPlayer/TPBaiduPublicProvider.m; sourceTree = "<group>"; };
+		A91ED4581581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		A91ED4591581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		A91ED45A1581E102006D7BFA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		A91ED45B1581E102006D7BFA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		A91ED45C1581E102006D7BFA /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		A91ED45D1581E102006D7BFA /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		A91ED45E1581E102006D7BFA /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		A91ED45F1581E102006D7BFA /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		A91ED4601581E102006D7BFA /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		A91ED4611581E102006D7BFA /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		A91ED4621581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		A91ED4631581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		A91ED4641581E102006D7BFA /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		A91ED4651581E102006D7BFA /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		A91ED4661581E102006D7BFA /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		A91ED4671581E102006D7BFA /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		A91ED4681581E102006D7BFA /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		A91ED46A1581E102006D7BFA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A91ED46B1581E102006D7BFA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A91ED475158201F4006D7BFA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A91ED476158201F4006D7BFA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A91ED477158201F4006D7BFA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9225DA8157CA28100C16EAE /* TPSongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPSongListViewController.h; path = Controllers/TPSongListViewController.h; sourceTree = "<group>"; };
 		A9225DA9157CA28100C16EAE /* TPSongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPSongListViewController.m; path = Controllers/TPSongListViewController.m; sourceTree = "<group>"; };
 		A9225DAA157CA28100C16EAE /* TPSongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPSongListViewController.xib; path = Controllers/TPSongListViewController.xib; sourceTree = "<group>"; };
@@ -153,6 +208,9 @@
 				A9F7133415775F33004283F7 /* CoreGraphics.framework in Frameworks */,
 				A96018861579F99300ED697F /* MediaPlayer.framework in Frameworks */,
 				A96018881579FAD800ED697F /* QuartzCore.framework in Frameworks */,
+				A91ED478158201F4006D7BFA /* Security.framework in Frameworks */,
+				A91ED479158201F4006D7BFA /* SystemConfiguration.framework in Frameworks */,
+				A91ED47A158201F4006D7BFA /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +220,10 @@
 		6C519D4D15790DEC00088700 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				A91ED43B1580929D006D7BFA /* btn_online_n.png */,
+				A91ED43C1580929D006D7BFA /* btn_online_n@2x.png */,
+				A91ED43D1580929D006D7BFA /* btn_online_s.png */,
+				A91ED43E1580929D006D7BFA /* btn_online_s@2x.png */,
 				6CCD4B1D157A664C001D7C72 /* audio_btn_airplay_blue_h.png */,
 				6CCD4B1E157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png */,
 				6CCD4B1F157A664C001D7C72 /* cell_song.png */,
@@ -208,8 +270,65 @@
 				A9225DA8157CA28100C16EAE /* TPSongListViewController.h */,
 				A9225DA9157CA28100C16EAE /* TPSongListViewController.m */,
 				A9225DAA157CA28100C16EAE /* TPSongListViewController.xib */,
+				A91ED4351580916D006D7BFA /* TPCloudMusicViewController.h */,
+				A91ED4361580916D006D7BFA /* TPCloudMusicViewController.m */,
+				A91ED4371580916E006D7BFA /* TPCloudMusicViewController.xib */,
+				A91ED44315809818006D7BFA /* TPChannelListViewController.h */,
+				A91ED44415809818006D7BFA /* TPChannelListViewController.m */,
+				A91ED44515809819006D7BFA /* TPChannelListViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A91ED4551581E0F0006D7BFA /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				A91ED4561581E102006D7BFA /* MKNetworkKit */,
+			);
+			name = 3rd;
+			sourceTree = "<group>";
+		};
+		A91ED4561581E102006D7BFA /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				A91ED4571581E102006D7BFA /* Categories */,
+				A91ED4641581E102006D7BFA /* MKNetworkEngine.h */,
+				A91ED4651581E102006D7BFA /* MKNetworkEngine.m */,
+				A91ED4661581E102006D7BFA /* MKNetworkKit.h */,
+				A91ED4671581E102006D7BFA /* MKNetworkOperation.h */,
+				A91ED4681581E102006D7BFA /* MKNetworkOperation.m */,
+				A91ED4691581E102006D7BFA /* Reachability */,
+			);
+			name = MKNetworkKit;
+			path = 3rd/MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		A91ED4571581E102006D7BFA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A91ED4581581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.h */,
+				A91ED4591581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.m */,
+				A91ED45A1581E102006D7BFA /* NSData+Base64.h */,
+				A91ED45B1581E102006D7BFA /* NSData+Base64.m */,
+				A91ED45C1581E102006D7BFA /* NSDate+RFC1123.h */,
+				A91ED45D1581E102006D7BFA /* NSDate+RFC1123.m */,
+				A91ED45E1581E102006D7BFA /* NSDictionary+RequestEncoding.h */,
+				A91ED45F1581E102006D7BFA /* NSDictionary+RequestEncoding.m */,
+				A91ED4601581E102006D7BFA /* NSString+MKNetworkKitAdditions.h */,
+				A91ED4611581E102006D7BFA /* NSString+MKNetworkKitAdditions.m */,
+				A91ED4621581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.h */,
+				A91ED4631581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A91ED4691581E102006D7BFA /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				A91ED46A1581E102006D7BFA /* Reachability.h */,
+				A91ED46B1581E102006D7BFA /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		A960186D1579F6F900ED697F /* MusicPlayer */ = {
@@ -230,6 +349,8 @@
 				A96018731579F70800ED697F /* TPMusicPlayerViewController.h */,
 				A96018741579F70800ED697F /* TPMusicPlayerViewController.m */,
 				A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */,
+				A91ED4481580999E006D7BFA /* TPBaiduPublicProvider.h */,
+				A91ED4491580999E006D7BFA /* TPBaiduPublicProvider.m */,
 			);
 			name = MusicPlayer;
 			sourceTree = "<group>";
@@ -254,6 +375,9 @@
 		A9F7132E15775F33004283F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A91ED475158201F4006D7BFA /* Security.framework */,
+				A91ED476158201F4006D7BFA /* SystemConfiguration.framework */,
+				A91ED477158201F4006D7BFA /* CFNetwork.framework */,
 				6CCD4B3D157A7871001D7C72 /* CoreMedia.framework */,
 				6CCD4B3B157A6D2F001D7C72 /* AVFoundation.framework */,
 				A96018871579FAD800ED697F /* QuartzCore.framework */,
@@ -268,6 +392,7 @@
 		A9F7133515775F33004283F7 /* Tanplay */ = {
 			isa = PBXGroup;
 			children = (
+				A91ED4551581E0F0006D7BFA /* 3rd */,
 				A960186D1579F6F900ED697F /* MusicPlayer */,
 				6C519D831579138E00088700 /* Controllers */,
 				A9F7133E15775F33004283F7 /* AppDelegate.h */,
@@ -382,6 +507,12 @@
 				6CCD4B23157A664C001D7C72 /* cell_song.png in Resources */,
 				6CCD4B24157A664C001D7C72 /* cell_song@2x.png in Resources */,
 				A9225DAC157CA28100C16EAE /* TPSongListViewController.xib in Resources */,
+				A91ED4391580916E006D7BFA /* TPCloudMusicViewController.xib in Resources */,
+				A91ED43F1580929D006D7BFA /* btn_online_n.png in Resources */,
+				A91ED4401580929D006D7BFA /* btn_online_n@2x.png in Resources */,
+				A91ED4411580929D006D7BFA /* btn_online_s.png in Resources */,
+				A91ED4421580929D006D7BFA /* btn_online_s@2x.png in Resources */,
+				A91ED44715809819006D7BFA /* TPChannelListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +534,18 @@
 				A96018841579F8E000ED697F /* UIImageView+Reflection.m in Sources */,
 				6CCD4B1C157A6074001D7C72 /* TPiPodProvider.m in Sources */,
 				A9225DAB157CA28100C16EAE /* TPSongListViewController.m in Sources */,
+				A91ED4381580916E006D7BFA /* TPCloudMusicViewController.m in Sources */,
+				A91ED44615809819006D7BFA /* TPChannelListViewController.m in Sources */,
+				A91ED44A1580999E006D7BFA /* TPBaiduPublicProvider.m in Sources */,
+				A91ED46C1581E102006D7BFA /* NSAlert+MKNetworkKitAdditions.m in Sources */,
+				A91ED46D1581E102006D7BFA /* NSData+Base64.m in Sources */,
+				A91ED46E1581E102006D7BFA /* NSDate+RFC1123.m in Sources */,
+				A91ED46F1581E102006D7BFA /* NSDictionary+RequestEncoding.m in Sources */,
+				A91ED4701581E102006D7BFA /* NSString+MKNetworkKitAdditions.m in Sources */,
+				A91ED4711581E102006D7BFA /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				A91ED4721581E102006D7BFA /* MKNetworkEngine.m in Sources */,
+				A91ED4731581E102006D7BFA /* MKNetworkOperation.m in Sources */,
+				A91ED4741581E102006D7BFA /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +568,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -435,7 +579,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -449,10 +593,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -466,6 +611,7 @@
 		A9F7135815775F34004283F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tanplay/Tanplay-Prefix.pch";
 				INFOPLIST_FILE = "Tanplay/Tanplay-Info.plist";
@@ -477,6 +623,7 @@
 		A9F7135915775F34004283F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tanplay/Tanplay-Prefix.pch";
 				INFOPLIST_FILE = "Tanplay/Tanplay-Info.plist";

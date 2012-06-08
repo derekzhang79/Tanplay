@@ -419,7 +419,7 @@
 
 -(void)addAirplayPicker
 {
-    MPVolumeView *volumeView = [[[MPVolumeView alloc] init] autorelease];
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
     [volumeView setShowsVolumeSlider:NO];
     [volumeView sizeToFit];
     volumeView.frame = CGRectMake(258, self.controlsToolbar.frame.origin.y + 15, volumeView.frame.size.width, volumeView.frame.size.height);

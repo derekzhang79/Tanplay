@@ -109,7 +109,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     if(indexPath.section == 0)
@@ -176,7 +176,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    TPSongListViewController *controller = [[[TPSongListViewController alloc] initWithNibName:@"TPSongListViewController" bundle:nil] autorelease];
+    TPSongListViewController *controller = [[TPSongListViewController alloc] initWithNibName:@"TPSongListViewController" bundle:nil];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
