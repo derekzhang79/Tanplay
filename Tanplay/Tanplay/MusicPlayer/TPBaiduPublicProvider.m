@@ -8,6 +8,19 @@
 
 #import "TPBaiduPublicProvider.h"
 
+#define CHNANNELLIST_URL @"http://ting.baidu.com/data/fm/channelList?size=300&start=0&type=public"
+
+MKNKResponseBlock completionCallback = ^(MKNetworkOperation *completedOperation)
+{
+    NSDictionary *response = [completedOperation responseJSON];
+    NSLog(@"%@", response);    
+};
+
+MKNKErrorBlock errorCallback = ^(NSError *error)
+{
+    
+};
+
 @implementation TPBaiduPublicProvider
 
 @synthesize channelListViewController;
@@ -15,7 +28,7 @@
 -(id)init {
     self = [super init];
     if ( self ){
-        
+        _networkEngine = [[MKNetworkEngine alloc] initWithHostName:nil];
     }
     
     return self;
@@ -39,6 +52,13 @@
     }
     
     return provider;
+}
+
+- (void)requestChannelList
+{
+    MKNetworkOperation *op = [_networkEngine operationWithURLString:CHNANNELLIST_URL];
+    [op onCompletion:completionCallback onError:errorCallback];
+    [_networkEngine enqueueOperation:op];
 }
 
 //-(NSString*)musicPlayer:(TPMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {

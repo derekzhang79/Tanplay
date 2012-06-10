@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "TPMusicPlayerViewController.h"
 #import "TPChannelListViewController.h"
+#import "MKNetworkKit.h"
 
 @interface TPBaiduPublicProvider : NSObject //<TPMusicPlayerDelegate, TPMusicPlayerDataSource>
 {
-    
+    MKNetworkEngine *_networkEngine;
 }
 
 @property (nonatomic, assign) TPChannelListViewController *channelListViewController;
+
++ (TPBaiduPublicProvider *)sharedProvider;
+- (void)requestChannelList;
 
 @end
