@@ -15,6 +15,8 @@
 
 @implementation TPChannelListViewController
 
+@synthesize tableView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[TPBaiduPublicProvider sharedProvider] requestChannelList];
+    [TPBaiduPublicProvider sharedProvider].channelListViewController = self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -54,37 +56,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    int rowCount = 0;
-    switch (section) {
-        case 0:
-            rowCount = 1;
-            break;
-            
-        default:
-            break;
-    }
-    
-    return rowCount;
+    NSArray *array = [TPBaiduPublicProvider sharedProvider].channels;
+    return array.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    if(indexPath.section == 0)
-    {
-        if(indexPath.row == 0)
-        {
-            cell.textLabel.text = @"百度公共电台";
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            cell.imageView.image = [UIImage imageNamed:@"cell_song"];
-        }
-    }
+    cell.textLabel.text = ((TPBaiduChannel*)[[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row]).channelName;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.imageView.image = [UIImage imageNamed:@"cell_song"];
     return cell;
 }
 
@@ -127,12 +114,17 @@
  }
  */
 
+- (void)playChannel:(TPBaiduChannel *)channel
+{ 
+    [[TPBaiduPublicProvider sharedProvider] playChannel:channel];
+}
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    TPBaiduChannel *channel = [[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row];
+    [self playChannel:channel];
 }
 
 @end

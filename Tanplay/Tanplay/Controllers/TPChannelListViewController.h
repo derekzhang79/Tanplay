@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TPChannelListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    
+}
+
+@property (nonatomic, assign) IBOutlet UITableView *tableView;
 
 @end

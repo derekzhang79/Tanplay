@@ -134,6 +134,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TPChannelListViewController *controller = [[TPChannelListViewController alloc] initWithNibName:@"TPChannelListViewController" bundle:nil];
+    controller.title = @"百度公共电台";
     [self.navigationController pushViewController:controller animated:YES];
 }
 

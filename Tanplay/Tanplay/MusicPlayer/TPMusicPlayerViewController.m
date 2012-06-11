@@ -152,7 +152,7 @@
     self.trackTitleLabel.textColor = [UIColor whiteColor];
     [self.trackTitleLabel setFont:[UIFont boldSystemFontOfSize:12]];
     [self addAirplayPicker];
-    [self coverArtTapped:nil];
+    //[self coverArtTapped:nil];
 }
 
 - (void)viewDidUnload
