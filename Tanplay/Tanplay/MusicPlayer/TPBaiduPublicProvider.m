@@ -20,14 +20,15 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 
 @implementation TPBaiduSongInfo
 
-@synthesize xcode, songID, songName, songURL;
+@synthesize xcode, songID, songName, songURL, artistName, albumName, time, picURL;
 
 @end
 
 
 @implementation TPBaiduChannel
 
-@synthesize channelID, channelName, songIDList, songInfoList;
+@synthesize channelID, channelName, songIDList;
+@synthesize songInfoList;
 
 @end
 
@@ -38,7 +39,8 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 @synthesize audioPlayer;
 @synthesize playerViewController;
 @synthesize playingChannel;
-@synthesize playingTrack;
+@synthesize playingSong;
+@synthesize playingAVPlayerItem;
 
 -(id)init {
     self = [super init];
@@ -131,7 +133,22 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
     str = [str stringByReplacingOccurrencesOfString:@"<songinfo><song_id>" withString:@""];
     NSMutableArray *array = [NSMutableArray arrayWithArray:[str componentsSeparatedByString:@"</song_id></songinfo>\r\n"]];
     [array removeLastObject];
-    [self channelByID:channelID].songIDList = array;    
+    
+    TPBaiduChannel *channel = [self channelByID:channelID];
+    if(!channel)
+        return;
+    channel.songIDList = array;    
+    
+    // initialize song infomation list
+
+    NSMutableArray *songInfoList = [[NSMutableArray alloc] initWithCapacity:array.count];
+    for(int i = 0; i < array.count; i++)
+    {
+        TPBaiduSongInfo *song = [[TPBaiduSongInfo alloc] init];
+        song.songID = [array objectAtIndex:i];
+        [songInfoList addObject:song];
+    }    
+    [self channelByID:channelID].songInfoList = songInfoList;
 }
 
 - (void)requestSongListByChannelID:(NSString *)channelID
@@ -149,37 +166,80 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
     [_networkEngine enqueueOperation:op];    
 }
 
+- (TPBaiduSongInfo *)getSongInfoBySongID:(NSString *)songID
+{
+    TPBaiduChannel *channel = self.playingChannel;
+    for(int i = 0; i < channel.songInfoList.count; i++)
+    {
+        TPBaiduSongInfo *songInfo = [channel.songInfoList objectAtIndex:i];
+        if([songInfo.songID isEqualToString:songID])
+        {
+            return songInfo;
+        }
+    }
+    NSLog(@"can not find the song in playing channel");
+    return nil;
+}
+
+- (void)playSongBySongInfo:(TPBaiduSongInfo *)song
+{
+    NSString *strURL = [NSString stringWithFormat:@"%@?xcode=%@", song.songURL, song.xcode];
+    AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:strURL]];
+    [self.audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
+    self.playingAVPlayerItem = playerItem;
+    self.playingSong = song;
+    [self.playerViewController updateUIForCurrentTrack];
+}
+
 - (void)requestSongInfoBySongID:(NSString *)songID
 {
     MKNKResponseBlock completionCallback = ^(MKNetworkOperation *completedOperation)
     {
         NSDictionary *dict = [completedOperation responseJSON];
-        TPBaiduSongInfo *song = [[TPBaiduSongInfo alloc] init];
+        
+        TPBaiduSongInfo *song = [self getSongInfoBySongID:songID];
+        if(!song)
+        {
+            return;
+        }
+        
         song.xcode = [[dict objectForKey:@"data"] objectForKey:@"xcode"];
         NSArray *songs = [[dict objectForKey:@"data"] objectForKey:@"songList"];
         song.songName = [[songs objectAtIndex:0] objectForKey:@"songName"];
-        song.songID = songID;
-        song.songURL =  [[songs objectAtIndex:0] objectForKey:@"songLink"];        
-        [self.playingChannel.songInfoList addObject:song];
+        song.songURL =  [[songs objectAtIndex:0] objectForKey:@"songLink"]; 
+        song.albumName = [[songs objectAtIndex:0] objectForKey:@"albumName"];
+        song.artistName = [[songs objectAtIndex:0] objectForKey:@"artistName"]; 
+        NSString *picURL = [[songs objectAtIndex:0] objectForKey:@"songPicRadio"]; 
+        picURL = [@"http:" stringByAppendingString:picURL];
+        song.picURL = picURL;
+        song.time = [[[songs objectAtIndex:0] objectForKey:@"time"] intValue]; 
         
-        NSString *strURL = [NSString stringWithFormat:@"%@?xcode=%@", song.songURL, song.xcode];
-        AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:strURL]];
-        [self.audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
+        [self playSongBySongInfo:song];
     };
     
-    NSString *url = [NSString stringWithFormat:SONGINFO_URL, songID];
-    MKNetworkOperation *op = [_networkEngine operationWithURLString:url];
-    [op onCompletion:completionCallback onError:errorCallback];
-    [_networkEngine enqueueOperation:op]; 
+    TPBaiduSongInfo *song = [self getSongInfoBySongID:songID];
+    if(!song)
+    {
+        return;
+    }
+    
+    if(song.songURL == nil || song.xcode == nil)
+    {
+        NSString *url = [NSString stringWithFormat:SONGINFO_URL, songID];
+        MKNetworkOperation *op = [_networkEngine operationWithURLString:url];
+        [op onCompletion:completionCallback onError:errorCallback];
+        [_networkEngine enqueueOperation:op]; 
+    }
+    else
+    {
+        [self playSongBySongInfo:song];       
+    }
 }
 
 - (void)playChannel:(TPBaiduChannel *)channel
 {
     [self requestSongListByChannelID:channel.channelID];
     self.playingChannel = channel;
-    //[self.channelListViewController presentModalViewController:self.playerViewController animated:YES];
-    //[self.playerViewController reloadData]; 
-    //[self.playerViewController playTrack:0 atPosition:0 volume:0];
 }
 
 - (void)setChannelListViewController:(TPChannelListViewController *)_channelListViewController
@@ -191,25 +251,32 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 #pragma mark Delegate Methods ( Used to control the music player )
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {
-    return self.playingChannel.channelName;
+    assert(trackNumber < self.playingChannel.songInfoList.count);
+    return ((TPBaiduSongInfo *)[self.playingChannel.songInfoList objectAtIndex:trackNumber]).albumName;
 }
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player artistForTrack:(NSUInteger)trackNumber {
-//    MPMediaItem* item = [self.mediaItems objectAtIndex:trackNumber];
-//    return [item valueForProperty:MPMediaItemPropertyArtist];
-    return nil;
+    assert(trackNumber < self.playingChannel.songInfoList.count);
+    return ((TPBaiduSongInfo *)[self.playingChannel.songInfoList objectAtIndex:trackNumber]).artistName;
 }
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player titleForTrack:(NSUInteger)trackNumber {
-//    MPMediaItem* item = [self.mediaItems objectAtIndex:trackNumber];
-//    return [item valueForProperty:MPMediaItemPropertyTitle];
-    return nil;
+    assert(trackNumber < self.playingChannel.songInfoList.count);
+    return ((TPBaiduSongInfo *)[self.playingChannel.songInfoList objectAtIndex:trackNumber]).songName;
 }
 
 -(CGFloat)musicPlayer:(TPMusicPlayerViewController *)player lengthForTrack:(NSUInteger)trackNumber {
-//    MPMediaItem* item = [self.mediaItems objectAtIndex:trackNumber];
-//    return [[item valueForProperty:MPMediaItemPropertyPlaybackDuration] longValue];
-    return 0;
+   
+    if(!playingAVPlayerItem)
+    {
+        return 10000;
+    }
+    else
+    {
+        CGFloat f = playingAVPlayerItem.duration.value / playingAVPlayerItem.duration.timescale;
+        return f;
+    }
+    
 }
 
 -(NSUInteger)numberOfTracksInPlayer:(TPMusicPlayerViewController *)player
@@ -218,14 +285,23 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 }
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player artworkForTrack:(NSUInteger)trackNumber receivingBlock:(TPMusicPlayerReceivingBlock)receivingBlock {
-//    MPMediaItem* item = [self.mediaItems objectAtIndex:trackNumber];
-//    MPMediaItemArtwork* artwork = [item valueForProperty:MPMediaItemPropertyArtwork];
-//    if ( artwork ){
-//        UIImage* foo = [artwork imageWithSize:player.preferredSizeForCoverArt];
-//        receivingBlock(foo, nil);
-//    } else {
-//        receivingBlock(nil,nil);
-//    }
+    
+    if(playingSong == nil)
+        return;
+    
+    MKNKImageBlock imageCallback = ^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) 
+    {
+        if (isInCache) 
+        {
+            receivingBlock(fetchedImage, nil);
+        } 
+        else 
+        {
+            receivingBlock(fetchedImage, nil);
+        }
+    };
+    
+    [_networkEngine imageAtURL:[NSURL URLWithString:self.playingSong.picURL] onCompletion:imageCallback];
 }
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player didChangeTrack:(NSUInteger)track {

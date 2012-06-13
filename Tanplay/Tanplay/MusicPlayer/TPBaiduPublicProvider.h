@@ -19,6 +19,10 @@
 @property (nonatomic, strong) NSString *songID;
 @property (nonatomic, strong) NSString *songName;
 @property (nonatomic, strong) NSString *songURL;
+@property (nonatomic, strong) NSString *artistName;
+@property (nonatomic, strong) NSString *albumName;
+@property (nonatomic, strong) NSString *picURL;
+@property (nonatomic) NSInteger time;
 
 @end
 
@@ -41,7 +45,8 @@
 @property (nonatomic, assign) TPChannelListViewController *channelListViewController;
 @property (nonatomic, strong) NSMutableArray *channels;
 @property (nonatomic, assign) TPBaiduChannel *playingChannel;
-@property (nonatomic, assign) NSInteger playingTrack;
+@property (nonatomic, assign) AVPlayerItem *playingAVPlayerItem;
+@property (nonatomic, assign) TPBaiduSongInfo *playingSong;
 
 + (TPBaiduPublicProvider *)sharedProvider;
 - (void)requestChannelList;

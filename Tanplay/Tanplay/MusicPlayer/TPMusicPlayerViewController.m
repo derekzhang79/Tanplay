@@ -18,10 +18,10 @@
 -(void)setScrobbleUI:(BOOL)scrobbleState;
 -(void)adjustPlayButtonState;
 -(void)changeTrack:(NSUInteger)newTrack;
--(void)updateSeekUI;
 -(void)updateTrackDisplay;
 -(void)adjustDirectionalButtonStates;
 -(void)addAirplayPicker;
+-(void)updateSeekUI;
 
 @property (nonatomic, retain) IBOutlet UISlider* volumeSlider; // Volume Slider
 @property (nonatomic, retain) IBOutlet UISlider* progressSlider; // Progress Slider buried in the Progress View
@@ -115,7 +115,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.isChannelMode = YES;
+        self.isChannelMode = NO;
     }
     return self;   
 }
@@ -208,6 +208,11 @@
     self.trackTitleLabel.text = [self.dataSource musicPlayer:self titleForTrack:self.currentTrack];
     self.albumTitleLabel.text = [self.dataSource musicPlayer:self albumForTrack:self.currentTrack];
 
+    self.currentTrackLength = [self.dataSource musicPlayer:self lengthForTrack:self.currentTrack];
+    self.numberOfTracks = [self.dataSource numberOfTracksInPlayer:self];
+    self.progressSlider.maximumValue = self.currentTrackLength;
+    self.progressSlider.minimumValue = 0;
+    
     // We only request the coverart if the delegate responds to it.
     if ( [self.dataSource respondsToSelector:@selector(musicPlayer:artworkForTrack:receivingBlock:)]) {
         
@@ -219,12 +224,12 @@
         self.albumArtReflection.image = [self.albumArtImageView reflectedImageWithHeight:self.albumArtReflection.frame.size.height];
         self.imageIsPlaceholder = YES;
         
-//        CATransition* transition = [CATransition animation];
-//        transition.type = kCATransitionPush;
-//        transition.subtype = self.lastDirectionChangePositive ? kCATransitionFromRight : kCATransitionFromLeft;
-//        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-//        [[self.albumArtImageView layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
-//        [[self.albumArtReflection layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
+        CATransition* transition = [CATransition animation];
+        transition.type = kCATransitionPush;
+        transition.subtype = self.lastDirectionChangePositive ? kCATransitionFromRight : kCATransitionFromLeft;
+        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [[self.albumArtImageView layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
+        [[self.albumArtReflection layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
 
 
         // Request the image. 
@@ -347,13 +352,6 @@
         // Update state to match new track
         self->currentPlaybackPosition = 0;
         self.currentTrack = newTrack;
-        
-        self.currentTrackLength = [self.dataSource musicPlayer:self lengthForTrack:self.currentTrack];
-        self.numberOfTracks = [self.dataSource numberOfTracksInPlayer:self];
-        
-        // Slider
-        self.progressSlider.maximumValue = self.currentTrackLength;
-        self.progressSlider.minimumValue = 0;
 
         if ( [self.delegate respondsToSelector:@selector(musicPlayer:didChangeTrack:) ]){
             [self.delegate musicPlayer:self didChangeTrack:newTrack];

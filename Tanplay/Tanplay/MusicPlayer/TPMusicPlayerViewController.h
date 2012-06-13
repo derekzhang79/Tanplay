@@ -101,6 +101,7 @@
  */
 -(void)previous;
 
+- (void)updateUIForCurrentTrack;
 
 /// --------------------------------
 /// @name Controlling User Interaction
