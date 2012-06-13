@@ -109,6 +109,16 @@
 @synthesize shouldHidePreviousTrackButtonAtBoundary;
 @synthesize navigationItem;
 @synthesize preferredSizeForCoverArt;
+@synthesize isChannelMode;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.isChannelMode = YES;
+    }
+    return self;   
+}
 
 - (void)viewDidLoad
 {
@@ -248,7 +258,10 @@
     if ( !self.playing ){
         self->playing = YES;
         
-        self.playbackTickTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playbackTick:) userInfo:nil repeats:YES];
+        if(!isChannelMode)
+        {
+            self.playbackTickTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playbackTick:) userInfo:nil repeats:YES];
+        }
         
         if ( [self.delegate respondsToSelector:@selector(musicPlayerDidStartPlaying:)] ){
             [self.delegate musicPlayerDidStartPlaying:self];
@@ -260,8 +273,12 @@
 -(void)pause {
     if ( self.playing ){
         self->playing = NO;
-        [self.playbackTickTimer invalidate];
-        self.playbackTickTimer = nil;
+        
+        if(!isChannelMode)
+        {
+            [self.playbackTickTimer invalidate];
+            self.playbackTickTimer = nil;
+        }
         
         if ( [self.delegate respondsToSelector:@selector(musicPlayerDidStopPlaying:)] ){
             [self.delegate musicPlayerDidStopPlaying:self];
@@ -481,6 +498,10 @@
  * Called when the cover art is tapped. Either shows or hides the scrobble-ui
  */
 -(IBAction)coverArtTapped:(id)sender {
+    
+    if(isChannelMode)
+        return;
+    
     [UIView animateWithDuration:0.25 animations:^{
         if ( self.scrobbleOverlay.alpha == 0 ){
             [self.scrobbleOverlay setAlpha:1];

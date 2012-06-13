@@ -58,6 +58,8 @@
 /// The Volume of the player. Valid values range from 0.0f to 1.0f
 @property (nonatomic) CGFloat volume;
 
+@property (nonatomic) BOOL isChannelMode;
+
 /**
  * Plays a given track using the supplied options.
  *

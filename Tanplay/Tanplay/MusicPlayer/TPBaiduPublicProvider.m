@@ -129,7 +129,8 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
     NSRange range = NSMakeRange(start.location, end.location - start.location);
     NSString *str = [xml substringWithRange:range];
     str = [str stringByReplacingOccurrencesOfString:@"<songinfo><song_id>" withString:@""];
-    NSArray *array = [str componentsSeparatedByString:@"</song_id></songinfo>"];
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[str componentsSeparatedByString:@"</song_id></songinfo>\r\n"]];
+    [array removeLastObject];
     [self channelByID:channelID].songIDList = array;    
 }
 
@@ -166,17 +167,18 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
         [self.audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
     };
     
-    MKNetworkOperation *op = [_networkEngine operationWithURLString:[NSString stringWithFormat:SONGINFO_URL, songID]];
+    NSString *url = [NSString stringWithFormat:SONGINFO_URL, songID];
+    MKNetworkOperation *op = [_networkEngine operationWithURLString:url];
     [op onCompletion:completionCallback onError:errorCallback];
-    [_networkEngine enqueueOperation:op];    
+    [_networkEngine enqueueOperation:op]; 
 }
 
 - (void)playChannel:(TPBaiduChannel *)channel
 {
     [self requestSongListByChannelID:channel.channelID];
     self.playingChannel = channel;
-//    [self.channelListViewController presentModalViewController:self.playerViewController animated:YES];
-//    [self.playerViewController reloadData]; 
+    //[self.channelListViewController presentModalViewController:self.playerViewController animated:YES];
+    //[self.playerViewController reloadData]; 
     //[self.playerViewController playTrack:0 atPosition:0 volume:0];
 }
 
@@ -227,9 +229,6 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 }
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player didChangeTrack:(NSUInteger)track {
-//    MPMediaItem *item = [self.mediaItems objectAtIndex:track];
-//    AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[item valueForProperty:MPMediaItemPropertyAssetURL]];
-//    [self.audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
     
     NSString *songID = [self.playingChannel.songIDList objectAtIndex:track];
     if(songID == nil)
