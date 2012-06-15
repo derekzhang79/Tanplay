@@ -246,6 +246,11 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
     [self requestChannelList];
 }
 
+- (void)showPlayerView:(UIViewController *)from
+{
+    [from presentViewController:self.playerViewController animated:YES completion:nil]; 
+}
+
 #pragma mark Delegate Methods ( Used to control the music player )
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {

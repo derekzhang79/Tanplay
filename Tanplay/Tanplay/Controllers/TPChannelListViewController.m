@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"正在播放" style:UIBarButtonItemStylePlain target:self action:@selector(showPlayer)];
     }
     return self;
 }
@@ -117,6 +117,11 @@
 - (void)playChannel:(TPBaiduChannel *)channel
 { 
     [[TPBaiduPublicProvider sharedProvider] playChannel:channel];
+}
+
+- (void)showPlayer
+{
+    [[TPBaiduPublicProvider sharedProvider] showPlayerView:self];
 }
 
 #pragma mark - Table view delegate

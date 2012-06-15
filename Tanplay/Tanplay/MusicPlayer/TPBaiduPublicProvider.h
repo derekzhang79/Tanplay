@@ -50,5 +50,6 @@
 + (TPBaiduPublicProvider *)sharedProvider;
 - (void)requestChannelList;
 - (void)playChannel:(TPBaiduChannel *)channel;
+- (void)showPlayerView:(UIViewController *)from;
 
 @end
