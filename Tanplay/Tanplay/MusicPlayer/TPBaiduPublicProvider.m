@@ -39,7 +39,6 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 @synthesize audioPlayer;
 @synthesize playerViewController;
 @synthesize playingChannel;
-@synthesize playingSong;
 @synthesize playingAVPlayerItem;
 
 -(id)init {
@@ -187,7 +186,6 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:strURL]];
     [self.audioPlayer replaceCurrentItemWithPlayerItem:playerItem];
     self.playingAVPlayerItem = playerItem;
-    self.playingSong = song;
     [self.playerViewController updateUIForCurrentTrack];
 }
 
@@ -286,8 +284,14 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player artworkForTrack:(NSUInteger)trackNumber receivingBlock:(TPMusicPlayerReceivingBlock)receivingBlock {
     
-    if(playingSong == nil)
+    assert(trackNumber < self.playingChannel.songInfoList.count);
+    TPBaiduSongInfo *song = (TPBaiduSongInfo *)[self.playingChannel.songInfoList objectAtIndex:trackNumber];
+    
+    if(song == nil)
+    {
+        receivingBlock(nil, nil);
         return;
+    }
     
     MKNKImageBlock imageCallback = ^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) 
     {
@@ -301,7 +305,7 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
         }
     };
     
-    [_networkEngine imageAtURL:[NSURL URLWithString:self.playingSong.picURL] onCompletion:imageCallback];
+    [_networkEngine imageAtURL:[NSURL URLWithString:song.picURL] onCompletion:imageCallback];
 }
 
 -(void)musicPlayer:(TPMusicPlayerViewController *)player didChangeTrack:(NSUInteger)track {

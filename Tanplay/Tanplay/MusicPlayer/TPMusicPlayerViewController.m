@@ -218,36 +218,40 @@
         
         // Copy the current track to another variable, otherwise we would just access the current one.
         NSUInteger track = self.currentTrack;
-        
+         
         // Placeholder as long as we are loading
         self.albumArtImageView.image = [UIImage imageNamed:@"noartplaceholder.png"];
         self.albumArtReflection.image = [self.albumArtImageView reflectedImageWithHeight:self.albumArtReflection.frame.size.height];
         self.imageIsPlaceholder = YES;
         
-        CATransition* transition = [CATransition animation];
-        transition.type = kCATransitionPush;
-        transition.subtype = self.lastDirectionChangePositive ? kCATransitionFromRight : kCATransitionFromLeft;
-        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-        [[self.albumArtImageView layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
-        [[self.albumArtReflection layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
+//        CATransition* transition = [CATransition animation];
+//        transition.type = kCATransitionPush;
+//        transition.subtype = self.lastDirectionChangePositive ? kCATransitionFromRight : kCATransitionFromLeft;
+//        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+//        [[self.albumArtImageView layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
+//        [[self.albumArtReflection layer] addAnimation:transition forKey:@"SlideOutandInImagek"];
 
-
-        // Request the image. 
+        // Request the image.
         [self.dataSource musicPlayer:self artworkForTrack:self.currentTrack receivingBlock:^(UIImage *image, NSError *__autoreleasing *error) {
-            if ( track == self.currentTrack ){
-            
+
+            if ( track == self.currentTrack )
+            {
                 // If there is no image given, use the placeholder
-                if ( image  != nil ){
+
+                if ( image  != nil )
+                {
                     dispatch_async(dispatch_get_main_queue(), ^{
                     self.albumArtImageView.image = image;
                     self.albumArtReflection.image = [self.albumArtImageView reflectedImageWithHeight:self.albumArtReflection.frame.size.height];
-                });
-            }
-            
-            } else {
+                    });
+                }
+            } 
+            else 
+            {
                 NSLog(@"Discarded Response, Invalid for this cycle.");
             }
         }];
+
         
     } else {
         // Otherwise, we'll stick with the placeholder.
@@ -373,7 +377,6 @@
         [self pause];
     
     [self changeTrack:0];
-    [self updateUIForCurrentTrack];
     
 }
 

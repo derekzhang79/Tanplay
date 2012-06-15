@@ -46,7 +46,6 @@
 @property (nonatomic, strong) NSMutableArray *channels;
 @property (nonatomic, assign) TPBaiduChannel *playingChannel;
 @property (nonatomic, strong) AVPlayerItem *playingAVPlayerItem;
-@property (nonatomic, strong) TPBaiduSongInfo *playingSong;
 
 + (TPBaiduPublicProvider *)sharedProvider;
 - (void)requestChannelList;
