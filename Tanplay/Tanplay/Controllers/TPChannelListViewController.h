@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum _CHANNELPROVIDER
+{
+    CP_BAIDU = 0,
+    CP_DOUBAN = 1
+}CHANNELPROVIDER;
+
 @interface TPChannelListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     
 }
 
 @property (nonatomic, assign) IBOutlet UITableView *tableView;
+@property (nonatomic, assign) CHANNELPROVIDER channelProvider;
 
 @end

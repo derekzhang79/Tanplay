@@ -33,6 +33,7 @@
 		6C519D7E157910A000088700 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D7C157910A000088700 /* Icon@2x.png */; };
 		6C519D871579145A00088700 /* TPLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C519D851579145A00088700 /* TPLocalMusicViewController.m */; };
 		6C519D881579145A00088700 /* TPLocalMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C519D861579145A00088700 /* TPLocalMusicViewController.xib */; };
+		6C7319D51590AEBE00B76978 /* TPDoubanFMProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7319D41590AEBE00B76978 /* TPDoubanFMProvider.m */; };
 		6CCD4B1C157A6074001D7C72 /* TPiPodProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */; };
 		6CCD4B21157A664C001D7C72 /* audio_btn_airplay_blue_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1D157A664C001D7C72 /* audio_btn_airplay_blue_h.png */; };
 		6CCD4B22157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD4B1E157A664C001D7C72 /* audio_btn_airplay_blue_h@2x.png */; };
@@ -127,6 +128,8 @@
 		6C519D841579145A00088700 /* TPLocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPLocalMusicViewController.h; path = Controllers/TPLocalMusicViewController.h; sourceTree = "<group>"; };
 		6C519D851579145A00088700 /* TPLocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPLocalMusicViewController.m; path = Controllers/TPLocalMusicViewController.m; sourceTree = "<group>"; };
 		6C519D861579145A00088700 /* TPLocalMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TPLocalMusicViewController.xib; path = Controllers/TPLocalMusicViewController.xib; sourceTree = "<group>"; };
+		6C7319D31590AEBE00B76978 /* TPDoubanFMProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPDoubanFMProvider.h; path = MusicPlayer/TPDoubanFMProvider.h; sourceTree = "<group>"; };
+		6C7319D41590AEBE00B76978 /* TPDoubanFMProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPDoubanFMProvider.m; path = MusicPlayer/TPDoubanFMProvider.m; sourceTree = "<group>"; };
 		6CCD4B1A157A6073001D7C72 /* TPiPodProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPiPodProvider.h; path = MusicPlayer/TPiPodProvider.h; sourceTree = "<group>"; };
 		6CCD4B1B157A6073001D7C72 /* TPiPodProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPiPodProvider.m; path = MusicPlayer/TPiPodProvider.m; sourceTree = "<group>"; };
 		6CCD4B1D157A664C001D7C72 /* audio_btn_airplay_blue_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = audio_btn_airplay_blue_h.png; path = Resources/audio_btn_airplay_blue_h.png; sourceTree = "<group>"; };
@@ -422,6 +425,8 @@
 				A96018751579F70800ED697F /* TPMusicPlayerViewController.xib */,
 				A91ED4481580999E006D7BFA /* TPBaiduPublicProvider.h */,
 				A91ED4491580999E006D7BFA /* TPBaiduPublicProvider.m */,
+				6C7319D31590AEBE00B76978 /* TPDoubanFMProvider.h */,
+				6C7319D41590AEBE00B76978 /* TPDoubanFMProvider.m */,
 			);
 			name = MusicPlayer;
 			sourceTree = "<group>";
@@ -629,6 +634,7 @@
 				A91ED49E1585A2E9006D7BFA /* SBJsonTokeniser.m in Sources */,
 				A91ED49F1585A2E9006D7BFA /* SBJsonUTF8Stream.m in Sources */,
 				A91ED4A01585A2E9006D7BFA /* SBJsonWriter.m in Sources */,
+				6C7319D51590AEBE00B76978 /* TPDoubanFMProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

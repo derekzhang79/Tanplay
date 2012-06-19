@@ -8,6 +8,7 @@
 
 #import "TPChannelListViewController.h"
 #import "TPBaiduPublicProvider.h"
+#import "TPDoubanFMProvider.h"
 
 @interface TPChannelListViewController ()
 
@@ -16,6 +17,7 @@
 @implementation TPChannelListViewController
 
 @synthesize tableView;
+@synthesize channelProvider;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +31,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [TPBaiduPublicProvider sharedProvider].channelListViewController = self;
+
+    if(self.channelProvider == CP_BAIDU)
+    {     
+        [TPBaiduPublicProvider sharedProvider].channelListViewController = self;
+        self.title = @"百度公共电台";
+    }
+    else if(self.channelProvider == CP_DOUBAN)
+    {
+        [TPDoubanFMProvider sharedProvider].channelListViewController = self;
+        self.title = @"豆瓣FM";  
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -55,9 +67,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    NSArray *array = [TPBaiduPublicProvider sharedProvider].channels;
-    return array.count;
+    NSArray *channels = nil;
+    if(self.channelProvider == CP_BAIDU)
+    {
+        channels = [TPBaiduPublicProvider sharedProvider].channels;
+    }
+    else if(self.channelProvider == CP_DOUBAN)
+    {
+        channels = [TPDoubanFMProvider sharedProvider].channels;
+    }
+    return channels.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,7 +88,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = ((TPBaiduChannel*)[[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row]).channelName;
+    if(self.channelProvider == CP_BAIDU)
+    {
+        cell.textLabel.text = ((TPBaiduChannel*)[[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row]).channelName;
+    }
+    else if(self.channelProvider == CP_DOUBAN)
+    {
+        NSString *text = ((TPDoubanChannel*)[[TPDoubanFMProvider sharedProvider].channels objectAtIndex:indexPath.row]).channelName;
+        cell.textLabel.text = text;       
+    }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.imageView.image = [UIImage imageNamed:@"cell_song"];
     return cell;
@@ -116,20 +143,40 @@
 
 - (void)playChannel:(TPBaiduChannel *)channel
 { 
-    [[TPBaiduPublicProvider sharedProvider] playChannel:channel];
+    if(self.channelProvider == CP_BAIDU)
+    {
+        [[TPBaiduPublicProvider sharedProvider] playChannel:channel];
+    }
+    else if(self.channelProvider == CP_DOUBAN)
+    {
+    }
 }
 
 - (void)showPlayer
 {
-    [[TPBaiduPublicProvider sharedProvider] showPlayerView:self];
+    if(self.channelProvider == CP_BAIDU)
+    {
+        [[TPBaiduPublicProvider sharedProvider] showPlayerView:self];
+    }
+    else if(self.channelProvider == CP_DOUBAN)
+    {
+    }
+
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TPBaiduChannel *channel = [[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row];
-    [self playChannel:channel];
+    if(self.channelProvider == CP_BAIDU)
+    {
+        TPBaiduChannel *channel = [[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row];
+        [self playChannel:channel];
+    }
+    else if(self.channelProvider == CP_DOUBAN)
+    {
+    }
+
 }
 
 @end

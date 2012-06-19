@@ -58,7 +58,7 @@
     int rowCount = 0;
     switch (section) {
         case 0:
-            rowCount = 1;
+            rowCount = 2;
             break;
             
         default:
@@ -84,6 +84,13 @@
             cell.textLabel.text = @"百度公共电台";
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cell.imageView.image = [UIImage imageNamed:@"cell_song"];
+        }
+        else if(indexPath.row == 1)
+        {
+            cell.textLabel.text = @"豆瓣FM";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.imageView.image = [UIImage imageNamed:@"cell_song"];
+           
         }
     }
     return cell;
@@ -133,9 +140,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     TPChannelListViewController *controller = [[TPChannelListViewController alloc] initWithNibName:@"TPChannelListViewController" bundle:nil];
-    controller.title = @"百度公共电台";
+    controller.channelProvider = indexPath.row;
     [self.navigationController pushViewController:controller animated:YES];
+
 }
 
 @end

@@ -9,14 +9,14 @@
 #import "TPBaiduPublicProvider.h"
 #import "NSObject+SBJson.h"
 
-#define CHNANNELLIST_URL @"http://ting.baidu.com/data/fm/channelList?size=300&start=0&type=public"
-#define SONGLIST_URL @"http://ting.baidu.com/data/fm/channel?id=%@&size=200&start=0"
-#define SONGINFO_URL @"http://ting.baidu.com/data/music/songlink?songIds=%@&type=mp3"
-
 MKNKErrorBlock errorCallback = ^(NSError *error)
 {
     
 };
+
+#define CHNANNELLIST_URL @"http://ting.baidu.com/data/fm/channelList?size=300&start=0&type=public"
+#define SONGLIST_URL @"http://ting.baidu.com/data/fm/channel?id=%@&size=200&start=0"
+#define SONGINFO_URL @"http://ting.baidu.com/data/music/songlink?songIds=%@&type=mp3"
 
 @implementation TPBaiduSongInfo
 
@@ -208,7 +208,9 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
         song.albumName = [[songs objectAtIndex:0] objectForKey:@"albumName"];
         song.artistName = [[songs objectAtIndex:0] objectForKey:@"artistName"]; 
         NSString *picURL = [[songs objectAtIndex:0] objectForKey:@"songPicRadio"]; 
-        picURL = [@"http:" stringByAppendingString:picURL];
+        NSString *s = [picURL substringToIndex:4];
+        if(![s isEqualToString:@"http"])
+            picURL = [@"http:" stringByAppendingString:picURL];
         song.picURL = picURL;
         song.time = [[[songs objectAtIndex:0] objectForKey:@"time"] intValue]; 
         
