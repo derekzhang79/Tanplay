@@ -117,6 +117,7 @@
 - (void)playChannel:(TPBaiduChannel *)channel
 { 
     [[TPBaiduPublicProvider sharedProvider] playChannel:channel];
+    //hot fix
 }
 
 - (void)showPlayer
