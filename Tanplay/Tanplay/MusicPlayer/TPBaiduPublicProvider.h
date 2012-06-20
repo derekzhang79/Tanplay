@@ -49,7 +49,7 @@
 
 + (TPBaiduPublicProvider *)sharedProvider;
 - (void)requestChannelList;
-- (void)playChannel:(TPBaiduChannel *)channel;
+- (void)playChannel:(NSInteger)channelIndex;
 - (void)showPlayerView:(UIViewController *)from;
 
 @end

@@ -236,10 +236,14 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
     }
 }
 
-- (void)playChannel:(TPBaiduChannel *)channel
+- (void)playChannel:(NSInteger)channelIndex
 {
+    if(channelIndex < 0 || channelIndex >= self.channels.count)
+        return;
+    
+    TPBaiduChannel *channel = [self.channels objectAtIndex:channelIndex];
     [self requestSongListByChannelID:channel.channelID];
-    self.playingChannel = channel;
+    self.playingChannel = channel;   
 }
 
 - (void)setChannelListViewController:(TPChannelListViewController *)_channelListViewController

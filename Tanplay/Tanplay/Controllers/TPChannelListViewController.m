@@ -141,16 +141,6 @@
  }
  */
 
-- (void)playChannel:(TPBaiduChannel *)channel
-{ 
-    if(self.channelProvider == CP_BAIDU)
-    {
-        [[TPBaiduPublicProvider sharedProvider] playChannel:channel];
-    }
-    else if(self.channelProvider == CP_DOUBAN)
-    {
-    }
-}
 
 - (void)showPlayer
 {
@@ -160,8 +150,8 @@
     }
     else if(self.channelProvider == CP_DOUBAN)
     {
+        [[TPDoubanFMProvider sharedProvider] showPlayerView:self];
     }
-
 }
 
 #pragma mark - Table view delegate
@@ -170,11 +160,11 @@
 {
     if(self.channelProvider == CP_BAIDU)
     {
-        TPBaiduChannel *channel = [[TPBaiduPublicProvider sharedProvider].channels objectAtIndex:indexPath.row];
-        [self playChannel:channel];
+        [[TPBaiduPublicProvider sharedProvider] playChannel:indexPath.row];
     }
     else if(self.channelProvider == CP_DOUBAN)
     {
+        [[TPDoubanFMProvider sharedProvider] playChannel:indexPath.row];
     }
 
 }
