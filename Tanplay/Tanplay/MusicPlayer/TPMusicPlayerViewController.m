@@ -13,6 +13,21 @@
 #import "AutoScrollLabel.h"
 #import <QuartzCore/QuartzCore.h>
 
+@implementation AVPlayer(singleton)
+
++ (AVPlayer *)sharedAVPlayer
+{
+    static AVPlayer *player = nil;
+    @synchronized(self)
+    {
+        if(player == nil)
+            player = [[AVPlayer alloc] init];
+    }
+    return player;
+}
+
+@end
+
 @interface TPMusicPlayerViewController()
 
 -(void)setScrobbleUI:(BOOL)scrobbleState;
@@ -111,6 +126,7 @@
 @synthesize preferredSizeForCoverArt;
 @synthesize isChannelMode;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -118,6 +134,19 @@
         self.isChannelMode = NO;
     }
     return self;   
+}
+
++ (TPMusicPlayerViewController *)sharedMusicPlayerViewController
+{
+    static TPMusicPlayerViewController *controller = nil;
+    @synchronized(self)
+    {
+        if(controller == nil)
+        {
+            controller = [[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil];
+        }
+    }
+    return controller;
 }
 
 - (void)viewDidLoad

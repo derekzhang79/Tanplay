@@ -19,7 +19,7 @@
     self = [super init];
     if ( self ){
         
-        self.audioPlayer = [[AVPlayer alloc] init];
+        self.audioPlayer = [AVPlayer sharedAVPlayer];
         self.audioPlayer.allowsAirPlayVideo = YES;
         
         // Using an unspecific query we extract all files from the library for playback.
@@ -36,7 +36,7 @@
         [[UIApplication sharedApplication].keyWindow addSubview:view];
          */
         
-        self.playerViewController = [[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil];
+        self.playerViewController = [TPMusicPlayerViewController sharedMusicPlayerViewController];
         self.playerViewController.dataSource = self;
         self.playerViewController.delegate = self;
         

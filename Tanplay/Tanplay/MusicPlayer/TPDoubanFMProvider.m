@@ -45,10 +45,10 @@ MKNKErrorBlock doubanErrorCallback = ^(NSError *error)
         _networkEngine = [[MKNetworkEngine alloc] initWithHostName:nil];
         self.channels = [[NSMutableArray alloc] init];
         
-        self.audioPlayer = [[AVPlayer alloc] init];
+        self.audioPlayer = [AVPlayer sharedAVPlayer];
         self.audioPlayer.allowsAirPlayVideo = YES;
         
-        self.playerViewController = [[TPMusicPlayerViewController alloc] initWithNibName:@"TPMusicPlayerViewController" bundle:nil];
+        self.playerViewController = [TPMusicPlayerViewController sharedMusicPlayerViewController];
         self.playerViewController.dataSource = self;
         self.playerViewController.delegate = self;
     }  

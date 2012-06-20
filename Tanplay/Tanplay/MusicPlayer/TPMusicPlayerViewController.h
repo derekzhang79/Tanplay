@@ -11,6 +11,11 @@
 #import "TPMusicPlayerDelegate.h"
 #import "TPMusicPlayerDataSource.h"
 #import "OBSlider.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface AVPlayer(singleton)
++ (AVPlayer *)sharedAVPlayer;
+@end
 
 /**
  * The Music Player component. This is a drop-in view controller and provides the UI for a music player.
@@ -102,6 +107,7 @@
 -(void)previous;
 
 - (void)updateUIForCurrentTrack;
++ (TPMusicPlayerViewController *)sharedMusicPlayerViewController;
 
 /// --------------------------------
 /// @name Controlling User Interaction
