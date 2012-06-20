@@ -129,7 +129,7 @@
 
 - (void)playSongWithTrack:(NSInteger) track
 { 
-    [[TPiPodProvider sharediPodProvider] playTrack:track];
+    [[TPiPodProvider sharediPodProvider] playTrack:track fromView:self];
 }
 
 

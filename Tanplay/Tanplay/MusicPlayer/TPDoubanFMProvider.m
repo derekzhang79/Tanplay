@@ -167,7 +167,8 @@ MKNKErrorBlock doubanErrorCallback = ^(NSError *error)
 {
     if(channelIndex < 0 || channelIndex >= self.channels.count)
         return;
-    
+    self.playerViewController.dataSource = self;
+    self.playerViewController.delegate = self;
     TPDoubanChannel *channel = [self.channels objectAtIndex:channelIndex];
     [self requestSongListByChannelID:channel.channelID];
     self.playingChannel = channel;   

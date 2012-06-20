@@ -16,7 +16,7 @@
 
 }
 
-- (void)playTrack:(NSInteger)track;
+- (void)playTrack:(NSInteger)track fromView:(UIViewController *)from;
 - (void)showPlayerView:(UIViewController *)from;
 
 + (TPiPodProvider *)sharediPodProvider;

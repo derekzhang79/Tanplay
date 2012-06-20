@@ -88,16 +88,20 @@
     [UIView commitAnimations]; 
 }
 
-- (void)playTrack:(NSInteger)track
+- (void)playTrack:(NSInteger)track fromView:(UIViewController *)from
 {
-    [self doShowPlayerAnimation];
+    //[self doShowPlayerAnimation];
+    self.playerViewController.dataSource = self;
+    self.playerViewController.delegate = self;
+    [self showPlayerView:from];
     [self.playerViewController reloadData]; 
     [self.playerViewController playTrack:track atPosition:0 volume:0]; 
 }
 
 - (void)showPlayerView:(UIViewController *)from
 {
-    [self doShowPlayerAnimation];
+    //[self doShowPlayerAnimation];
+    [from presentViewController:self.playerViewController animated:YES completion:nil]; 
 }
 
 -(NSString*)musicPlayer:(TPMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {
@@ -171,7 +175,8 @@
 -(void)musicPlayerBackRequested:(TPMusicPlayerViewController *)musicPlayer {
     
     //[musicPlayer dismissViewControllerAnimated:YES completion:nil];   
-    [self doDismissPlayerAnimation];
+    //[self doDismissPlayerAnimation];
+    [musicPlayer dismissViewControllerAnimated:YES completion:nil]; 
 }
 
 

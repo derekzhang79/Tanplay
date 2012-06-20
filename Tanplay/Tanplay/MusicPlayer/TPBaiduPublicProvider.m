@@ -240,7 +240,8 @@ MKNKErrorBlock errorCallback = ^(NSError *error)
 {
     if(channelIndex < 0 || channelIndex >= self.channels.count)
         return;
-    
+    self.playerViewController.dataSource = self;
+    self.playerViewController.delegate = self;
     TPBaiduChannel *channel = [self.channels objectAtIndex:channelIndex];
     [self requestSongListByChannelID:channel.channelID];
     self.playingChannel = channel;   
